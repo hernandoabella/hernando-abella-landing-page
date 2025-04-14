@@ -34,9 +34,7 @@ const Header = () => {
 
   const links = [
     { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
     { href: "#services", label: "Services" },
-    { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -44,8 +42,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 py-3 md:py-4">
         {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-600 via-green-500 to-slate-400 text-transparent bg-clip-text">
-          Hernando Abella
+        <h1 className="text-2xl md:text-3xl font-bold text-green-500 ">
+          HernandoAbella
         </h1>
 
         {/* Desktop Nav */}
