@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Importando iconos para el menú móvil
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(""); // Para almacenar la sección activa
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,6 +13,7 @@ const Header = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,7 +22,7 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.6 } // Ajusta el umbral para cuando una sección es visible (0.6 = 60%)
+      { threshold: 0.6 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -31,119 +32,72 @@ const Header = () => {
     };
   }, []);
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 shadow-sm">
-      <div className="container flex justify-between items-center p-5 border bg-gray-400  backdrop-filter backdrop-blur-sm bg-opacity-5 rounded-xl top-5 relative ">
-        {/* Logo o Nombre */}
-        <div className="flex items-center gap-1">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-600 via-green-500 to-slate-400 inline-block text-transparent bg-clip-text">
-            Hernando Abella
-          </h1>
-        </div>
+  const links = [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#services", label: "Services" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contact", label: "Contact" },
+  ];
 
-        {/* Navegación en Desktop */}
-        <nav className="hidden md:flex space-x-8 font-semibold">
-          <a
-            href="#about"
-            className={`text-slate-500 hover:text-green-500 ${
-              activeSection === "about" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className={`text-slate-500 hover:text-green-500 ${
-              activeSection === "projects" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Projects
-          </a>
-          <a
-            href="#services"
-            className={`text-slate-500 hover:text-green-500 ${
-              activeSection === "services" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Services
-          </a>
-          <a
-            href="#testimonials"
-            className={`text-slate-500 hover:text-green-500 ${
-              activeSection === "contact" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Testimonials
-          </a>
-          <a
-            href="#contact"
-            className={`text-slate-500 hover:text-green-500 ${
-              activeSection === "contact" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Contact
-          </a>
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-md">
+      <div className="container mx-auto flex justify-between items-center px-4 py-3 md:py-4">
+        {/* Logo */}
+        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-slate-600 via-green-500 to-slate-400 text-transparent bg-clip-text">
+          Hernando Abella
+        </h1>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6 font-medium text-gray-700">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`transition-colors duration-200 hover:text-green-500 ${
+                activeSection === link.href.substring(1)
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
-        {/* Botón del Menú Móvil */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} aria-label="Toggle Menu">
             {isOpen ? (
-              <FaTimes className="w-6 h-6" />
+              <FaTimes className="w-6 h-6 text-gray-700" />
             ) : (
-              <FaBars className="w-6 h-6" />
+              <FaBars className="w-6 h-6 text-gray-700" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Navegación en Móvil */}
+      {/* Mobile Nav */}
       <div
-        className={`md:hidden bg-gray-800 transition-all ${
-          isOpen ? "block" : "hidden"
+        className={`md:hidden bg-white/90 backdrop-blur-lg transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[300px] py-4" : "max-h-0 overflow-hidden"
         }`}
       >
-        <nav className="flex flex-col items-center space-y-4 p-4">
-          <a
-            href="#home"
-            className={`hover:text-blue-500 ${
-              activeSection === "home" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className={`hover:text-blue-500 ${
-              activeSection === "about" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className={`hover:text-blue-500 ${
-              activeSection === "projects" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Projects
-          </a>
-          <a
-            href="#services"
-            className={`hover:text-blue-500 ${
-              activeSection === "services" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className={`hover:text-blue-500 ${
-              activeSection === "contact" ? "text-blue-500 font-bold" : ""
-            }`}
-          >
-            Contact
-          </a>
+        <nav className="flex flex-col items-center space-y-4 font-medium text-gray-700">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={`transition-colors duration-200 hover:text-blue-500 ${
+                activeSection === link.href.substring(1)
+                  ? "text-blue-500 font-semibold"
+                  : ""
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
