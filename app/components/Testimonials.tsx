@@ -27,27 +27,6 @@ const testimonialsData = [
     image: "/gabriel.jpg",
     website: "la-gir.com",
   },
-  {
-    name: "Samantha Lee",
-    feedback:
-      "Hernando's ability to turn ideas into functional, stunning websites is amazing. His work has significantly improved our brand's online presence.",
-    image: "/samantha.jpg",
-    website: "lee-designs.com",
-  },
-  {
-    name: "Carlos Mendez",
-    feedback:
-      "Professional, reliable, and skilled. Hernando delivered a website that exceeded our expectations, both in performance and design.",
-    image: "/carlos.jpg",
-    website: "mendezsolutions.com",
-  },
-  {
-    name: "Emma Rodriguez",
-    feedback:
-      "Hernando transformed our outdated site into a modern, high-performing platform. The experience was seamless from start to finish!",
-    image: "/emma.jpg",
-    website: "rodriguezco.com",
-  },
 ];
 
 const Testimonials = () => {
