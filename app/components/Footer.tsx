@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="py-10 text-center bg-[#141414]">
       <div>
         {/* Sección de redes sociales */}
-        <div className="my-10 flex justify-center space-x-6">
+        <div className="flex justify-center space-x-6">
           <a
             href="https://twitter.com/hernandoabella"
             target="_blank"
@@ -75,8 +75,8 @@ const Footer = () => {
             <FaWhatsapp className="w-6 h-6" />
           </a>
         </div>
-        {/* Derechos reservados */}
-        <div>
+
+        <div className="mt-10">
           <p className="text-md text-gray-500">
             © {new Date().getFullYear()} Hernando Abella. All rights reserved.
           </p>
