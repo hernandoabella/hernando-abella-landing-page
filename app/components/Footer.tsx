@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
         {/* Derechos reservados */}
         <div>
-          <p className="text-md">
+          <p className="text-md text-gray-500">
             © {new Date().getFullYear()} Hernando Abella. All rights reserved.
           </p>
         </div>

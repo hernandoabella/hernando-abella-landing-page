@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaStar } from "react-icons/fa"; // Import star icon
+import { FaStar } from "react-icons/fa";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const testimonialsData = [
   {
@@ -26,56 +27,75 @@ const testimonialsData = [
     image: "/gabriel.jpg",
     website: "la-gir.com",
   },
+  {
+    name: "Samantha Lee",
+    feedback:
+      "Hernando's ability to turn ideas into functional, stunning websites is amazing. His work has significantly improved our brand's online presence.",
+    image: "/samantha.jpg",
+    website: "lee-designs.com",
+  },
+  {
+    name: "Carlos Mendez",
+    feedback:
+      "Professional, reliable, and skilled. Hernando delivered a website that exceeded our expectations, both in performance and design.",
+    image: "/carlos.jpg",
+    website: "mendezsolutions.com",
+  },
+  {
+    name: "Emma Rodriguez",
+    feedback:
+      "Hernando transformed our outdated site into a modern, high-performing platform. The experience was seamless from start to finish!",
+    image: "/emma.jpg",
+    website: "rodriguezco.com",
+  },
 ];
 
 const Testimonials = () => {
   return (
     <section className="py-10 dark:bg-[#131313]" id="testimonials">
-      <div className="container mb-60">
-        <h2 className="text-3xl font-bold mb-6">What my clients say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
-          {testimonialsData.map((testimonial, index) => (
-            <div
-              key={index}
-              className="p-6 border rounded-lg  text-center transition-transform transform hover:scale-105 "
-            >
-              
-              {/* Rounded Image */}
-              <div className="mb-4 flex justify-center items-center">
-                <Image
-                  src={testimonial.image}
-                  width={100}
-                  height={100}
-                  className="rounded-full object-fill"
-                  alt={testimonial.name}
-                />
-              </div>
-
-              {/* Feedback */}
-              <p className="text-lg italic mb-4">{testimonial.feedback}</p>
-
-              {/* Stars */}
-              <div className="flex justify-center gap-2 mb-4 text-yellow-500">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
-              </div>
-
-              {/* Name */}
-              <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-
-              {/* Website */}
-              <a
-                href={testimonial.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-600 hover:underline"
-              >
-                {testimonial.website}
-              </a>
-            </div>
-          ))}
-        </div>
+      <div className="container mb-20">
+        <h2 className="text-3xl font-bold mb-6 text-center">What my clients say</h2>
+        <Carousel>
+          <CarouselContent>
+            {testimonialsData.map((testimonial, index) => (
+              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3 p-4">
+                <div className="p-6 border rounded-lg text-center transition-transform transform hover:scale-105 ">
+                  {/* Rounded Image */}
+                  <div className="mb-4 flex justify-center items-center">
+                    <Image
+                      src={testimonial.image}
+                      width={100}
+                      height={100}
+                      className="rounded-full object-fill"
+                      alt={testimonial.name}
+                    />
+                  </div>
+                  {/* Feedback */}
+                  <p className="text-lg italic mb-4">{testimonial.feedback}</p>
+                  {/* Stars */}
+                  <div className="flex justify-center gap-2 mb-4 text-yellow-500">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
+                  {/* Name */}
+                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                  {/* Website */}
+                  <a
+                    href={testimonial.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:underline"
+                  >
+                    {testimonial.website}
+                  </a>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
