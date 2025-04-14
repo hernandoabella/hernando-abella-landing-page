@@ -29,7 +29,7 @@ const books = [
 const BookGallery = () => {
   return (
     <section className="py-16 px-6 md:px-12 lg:px-20 bg-[#111] text-white min-h-screen">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">📚 My Bookshelf</h2>
+      <h2 className="font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-t from-purple-500 via-blue-300 to-blue-500 bg-transparent h-full text-center mb-10">My Book Collection</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {books.map((book, idx) => (
           <motion.a
