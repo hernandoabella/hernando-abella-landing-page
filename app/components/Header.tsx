@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -42,9 +42,14 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 py-3 md:py-4">
         {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold text-green-500 ">
-          HernandoAbella
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", type: "spring", stiffness: 100 }}
+          className="text-2xl md:text-3xl font-bold text-green-500"
+        >
+          &lt;HernandoAbella/&gt;
+        </motion.h1>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 font-medium text-gray-700">
@@ -52,11 +57,10 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`transition-colors duration-200 hover:text-green-500 ${
-                activeSection === link.href.substring(1)
-                  ? "text-blue-500 font-semibold"
+              className={`transition-colors duration-200 hover:text-green-500 ${activeSection === link.href.substring(1)
+                  ? "text-green-500 font-semibold"
                   : ""
-              }`}
+                }`}
             >
               {link.label}
             </a>
@@ -77,9 +81,8 @@ const Header = () => {
 
       {/* Mobile Nav */}
       <div
-        className={`md:hidden bg-white/90 backdrop-blur-lg transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[300px] py-4" : "max-h-0 overflow-hidden"
-        }`}
+        className={`md:hidden bg-white/90 backdrop-blur-lg transition-all duration-300 ease-in-out ${isOpen ? "max-h-[300px] py-4" : "max-h-0 overflow-hidden"
+          }`}
       >
         <nav className="flex flex-col items-center space-y-4 font-medium text-gray-700">
           {links.map((link) => (
@@ -87,11 +90,10 @@ const Header = () => {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-200 hover:text-blue-500 ${
-                activeSection === link.href.substring(1)
+              className={`transition-colors duration-200 hover:text-blue-500 ${activeSection === link.href.substring(1)
                   ? "text-blue-500 font-semibold"
                   : ""
-              }`}
+                }`}
             >
               {link.label}
             </a>
