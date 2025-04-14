@@ -9,6 +9,7 @@ import CTA from "./components/CTA";
 import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+// import BookGallery from "./components/BookGallery";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <Testimonials />
         <CTA />
+        {/* <BookGallery /> */}
         <Books />
         <BonusBook />
         <Contact />
