@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-12 overflow-hidden">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center px-6 py-12 overflow-hidden">
       {/* 🔥 Background Video */}
       <video
         autoPlay
