@@ -33,6 +33,7 @@ const Header = () => {
   }, []);
 
   const links = [
+    { href: "#home", label: "Index" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#contact", label: "Contact" },
