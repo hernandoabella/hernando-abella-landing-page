@@ -11,7 +11,7 @@ const AboutMe = () => {
       <div className="container flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
             About Me
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 leading-relaxed">
