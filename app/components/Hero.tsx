@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
@@ -39,31 +40,35 @@ const Hero = () => {
           Hi👋, I&apos;m Hernando!
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300">
-          Full-Stack Developer
-        </p>
+        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-g-500 h-10">
+          {/* ✅ Typing Effect */}
+          <Typewriter
+            options={{
+              strings: ["Full-Stack Developer", "Web Enthusiast", "Tech Lover"],
+              autoStart: true,
+              loop: true,
+              delay: 75,
+            }}
+          />
+        </div>
 
         {/* CTA Buttons */}
-        <div className="mt-6 flex gap-5 flex-wrap justify-center">
+        <div className="mt-6 flex gap-10 flex-wrap justify-center">
           <a href="https://portfolio-hernandoabella.vercel.app/" target="_blank">
             <div className="relative group">
-              <button className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-                <span className="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
-                  Portfolio
-                </span>
-              </button>
+            <button className="button">
+  <span>Portfolio</span>
+</button>
+
             </div>
           </a>
 
           <a href="#contact">
             <div className="relative group">
-              <button className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-                <span className="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
-                  Hire Me
-                </span>
-              </button>
+            <button className="button">
+  <span>Hire me</span>
+</button>
+
             </div>
           </a>
         </div>
