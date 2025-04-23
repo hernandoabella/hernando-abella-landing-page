@@ -6,7 +6,7 @@ const ContactSection = () => {
   return (
     <section className="bg-[#141414] pt-48" id="contact">
       <div className="container text-center">
-        <h2 className="font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-b from-slate-500 via-slate-100 to-slate-500 bg-transparent h-full mb-6">
+        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Contact Me
         </h2>
         <p className="text-lg text-gray-300">
