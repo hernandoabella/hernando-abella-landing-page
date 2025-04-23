@@ -3,7 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonialsData = [
   {
@@ -31,42 +37,50 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <section className="py-10 dark:bg-[#131313]" id="testimonials">
-      <div className="container mb-20">
-        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">What my clients say</h2>
+    <section
+      id="testimonials"
+      className="py-16 px-4 md:px-10 dark:bg-[#131313] bg-gray-50 dark:text-white"
+    >
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-green-100 via-green-300 to-green-500">
+          What my clients say
+        </h2>
+
         <Carousel>
           <CarouselContent>
             {testimonialsData.map((testimonial, index) => (
-              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3 p-4">
-                <div className="p-6 border rounded-lg text-center transition-transform transform hover:scale-105 ">
-                  {/* Rounded Image */}
-                  <div className="mb-4 flex justify-center items-center">
-                    <Image
-                      src={testimonial.image}
-                      width={100}
-                      height={100}
-                      className="rounded-full object-fill"
-                      alt={testimonial.name}
-                    />
-                  </div>
-                  {/* Feedback */}
-                  <p className="text-lg italic mb-4">{testimonial.feedback}</p>
-                  {/* Stars */}
-                  <div className="flex justify-center gap-2 mb-4 text-yellow-500">
+              <CarouselItem
+                key={index}
+                className="basis-full md:basis-1/2 lg:basis-1/3 p-4"
+              >
+                <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col items-center text-center transition-transform transform hover:-translate-y-1 duration-300 h-full">
+                  <Image
+                    src={testimonial.image}
+                    width={100}
+                    height={100}
+                    className="rounded-full mb-4 object-cover shadow"
+                    alt={testimonial.name}
+                  />
+
+                  <p className="text-base text-gray-700 dark:text-gray-300 italic mb-4">
+                    “{testimonial.feedback}”
+                  </p>
+
+                  <div className="flex justify-center gap-1 text-yellow-400 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} />
                     ))}
                   </div>
-                  {/* Name */}
-                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                  {/* Website */}
+
+                  <h3 className="text-lg font-bold mb-1">{testimonial.name}</h3>
+
                   <a
                     href={testimonial.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-600 hover:underline"
+                    className="text-sm text-green-600 dark:text-green-400 hover:underline"
                   >
-                    {testimonial.website}
+                    Visit website
                   </a>
                 </div>
               </CarouselItem>
