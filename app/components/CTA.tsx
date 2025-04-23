@@ -22,7 +22,7 @@ const CTA = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Ready to Take Your Projects to the Next Level?
         </h2>
         <p className="mb-8 text-lg">
