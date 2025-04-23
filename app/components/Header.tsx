@@ -40,7 +40,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 py-3 md:py-4">
         {/* Logo */}
         <motion.h1
@@ -91,8 +91,8 @@ const Header = () => {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-200 hover:text-blue-500 ${activeSection === link.href.substring(1)
-                  ? "text-blue-500 font-semibold"
+              className={`transition-colors duration-200 hover:text-green-500 ${activeSection === link.href.substring(1)
+                  ? "text-green-500 font-semibold"
                   : ""
                 }`}
             >
