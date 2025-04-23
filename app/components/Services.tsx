@@ -1,52 +1,53 @@
 "use client";
 
 import React from "react";
-import { FaCode, FaServer, FaShoppingCart, FaTools, FaCloud, FaMobileAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaRulerCombined, FaFileAlt, FaGlobe } from "react-icons/fa";
 
 const Services = () => {
   const services = [
     {
-      title: "Frontend Development",
+      title: "HTML Perfect Pixel Conversion",
       description:
-        "Building modern, responsive, and high-performance web applications with Next.js and React.",
-      icon: <FaCode className="text-4xl text-green-500 dark:text-blue-400" />,
+        "Convert your design (Figma, PSD, etc.) into clean, responsive HTML with pixel-perfect precision.",
+      icon: <FaRulerCombined className="text-4xl text-green-500 dark:text-blue-400" />,
     },
     {
-      title: "Backend Development",
+      title: "Landing Page Creation",
       description:
-        "Creating secure, scalable APIs and backend systems with Node.js, Express, and databases.",
-      icon: <FaServer className="text-4xl text-green-500 dark:text-purple-400" />,
+        "Custom high-converting landing pages designed for speed, responsiveness, and clarity.",
+      icon: <FaFileAlt className="text-4xl text-green-500 dark:text-purple-400" />,
     },
     {
-      title: "Full-Stack Solutions",
+      title: "Website Development",
       description:
-        "End-to-end development, integrating frontend, backend, and databases for seamless functionality.",
-      icon: <FaTools className="text-4xl text-green-500 dark:text-yellow-400" />,
-    },
-    {
-      title: "E-commerce Development",
-      description:
-        "Building custom online stores with Stripe, PayPal, and seamless checkout experiences.",
-      icon: <FaShoppingCart className="text-4xl text-green-500 dark:text-green-400" />,
-    },
-    {
-      title: "DevOps & Deployment",
-      description:
-        "Optimizing CI/CD pipelines, cloud deployment, and server management for better performance.",
-      icon: <FaCloud className="text-4xl text-green-500 dark:text-indigo-400" />,
+        "Full website builds using modern tech stacks, optimized for performance and SEO.",
+      icon: <FaGlobe className="text-4xl text-green-500 dark:text-yellow-400" />,
     },
   ];
 
   return (
     <section id="services" className="flex flex-col justify-center items-center dark:bg-[#131313] py-16">
       {/* Section Title */}
-      <h2 className="text-4xl font-bold mb-12 text-center">Services</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold mb-12 text-center"
+      >
+        Services
+      </motion.h2>
 
       {/* Services List */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 container">
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
             className="flex flex-col items-center p-6 bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300"
           >
             {/* Icon */}
@@ -57,7 +58,7 @@ const Services = () => {
 
             {/* Service Description */}
             <p className="text-gray-700 dark:text-gray-300 text-center">{service.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
