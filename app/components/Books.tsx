@@ -25,7 +25,7 @@ const Books = () => {
       className="pt-60 bg-gray-50 dark:bg-[#131313] text-gray-900 dark:text-gray-100"
     >
       <div className="text-center mb-12">
-        <h2 className="font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-t from-purple-500 via-blue-300 to-blue-500 bg-transparent h-full">
+        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Best Seller Books!
         </h2>
       </div>
