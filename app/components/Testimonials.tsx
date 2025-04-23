@@ -11,21 +11,21 @@ const testimonialsData = [
     feedback:
       "Hernando built our company website from the ground up. His expertise in full-stack development and attention to detail made the entire process seamless. Our website now runs faster and looks more professional than ever.",
     image: "/raj.jpg",
-    website: "thevplan.com",
+    website: "https://www.thevplan.com",
   },
   {
     name: "Nelson Daza",
     feedback:
       "I trusted Hernando with redesigning our website, and I couldn't be happier with the results. The site is visually appealing, user-friendly, and mobile-optimized. His expertise in web technologies is top-notch.",
     image: "/nelson.jpg",
-    website: "alunapublishinghouse.com",
+    website: "https://www.alunapublishinghouse.com",
   },
   {
     name: "Gabriel Martínez",
     feedback:
       "Working with Hernando on our Landing Page was an excellent experience. He not only delivered high-quality code but also implemented features that boosted our user engagement.",
     image: "/gabriel.jpg",
-    website: "la-gir.com",
+    website: "https://www.la-gir.com",
   },
 ];
 
@@ -33,7 +33,7 @@ const Testimonials = () => {
   return (
     <section className="py-10 dark:bg-[#131313]" id="testimonials">
       <div className="container mb-20">
-        <h2 className="text-3xl font-bold mb-6 text-center">What my clients say</h2>
+        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">What my clients say</h2>
         <Carousel>
           <CarouselContent>
             {testimonialsData.map((testimonial, index) => (
