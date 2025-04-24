@@ -4,7 +4,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section className="bg-[#141414] pt-48" id="contact">
+    <section className="bg-[#161616] p-20" id="contact">
       <div className="container text-center">
         <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Contact Me
