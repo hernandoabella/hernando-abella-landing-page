@@ -14,14 +14,16 @@ type Categories = {
   [key: string]: Book[];
 };
 
+const bonusFiles = [
+  "/BONUS/50-Concepts-Every-Java-Developer-Should-Know.pdf",
+  "/BONUS/120-Advanced-Javascript-Interview-Questions.pdf",
+  "/BONUS/150-Python-Pattern-Programs.pdf",
+  "/BONUS/250-Killer-JS-One-Liners.pdf",
+  "/BONUS/SQL-Cookbook.pdf",
+];
+
 const Books = () => {
-  const bonusFiles = [
-    "/BONUS/50-Concepts-Every-Java-Developer-Should-Know.pdf",
-    "/BONUS/120-Advanced-Javascript-Interview-Questions.pdf",
-    "/BONUS/150-Python-Pattern-Programs.pdf",
-    "/BONUS/250-Killer-JS-One-Liners.pdf",
-    "/BONUS/SQL-Cookbook.pdf",
-  ];
+  
   
   const handleMultipleDownloads = useCallback(() => {
     bonusFiles.forEach((file) => {
@@ -32,7 +34,8 @@ const Books = () => {
       link.click();
       document.body.removeChild(link);
     });
-  }, []);
+  }, [bonusFiles]);
+  
 
   const categories: Categories = {
 
