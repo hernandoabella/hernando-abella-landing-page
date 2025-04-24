@@ -4,12 +4,10 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Books from "./components/Books";
-import BonusBook from "./components/BonusBook";
 import CTA from "./components/CTA";
-import SideProjects from "./components/SideProjects";
+// import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-// import BookGallery from "./components/BookGallery";
 
 export default function Home() {
   return (
@@ -24,7 +22,6 @@ export default function Home() {
         <Testimonials />
         {/* <BookGallery /> */}
         <Books />
-        <BonusBook />
         <Contact />
         <Footer />
       </div>
