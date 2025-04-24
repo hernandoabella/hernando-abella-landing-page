@@ -27,12 +27,12 @@ const Books = () => {
     ],
     "Program Collection": [
       {
-        title: "The Loop Diaries",
-        image: "/book-2.jpg",
+        title: "200 C Programs",
+        image: "/c-programs.jpg",
         link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
       },
-      { title: "Decode Me If You Can", image: "/book-2.jpg", link: "#" },
-      { title: "Try Except Love", image: "/book-2.jpg", link: "#" },
+      { title: "200 Python Programs", image: "/python-programs.jpg", link: "#" },
+      { title: "200 Rust Programs", image: "/book-2.jpg", link: "#" },
     ],
     "Killer One-Liners": [
       {
