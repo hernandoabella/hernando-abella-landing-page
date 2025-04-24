@@ -22,24 +22,24 @@ const CTA = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
+        <h2 className="mb-5 font-extrabold text-white text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Ready to Take Your Projects to the Next Level?
         </h2>
-        <p className="mb-8 text-lg">
+        <p className="mb-8 text-lg text-gray-300">
           Let&apos;s work together to create something amazing. 
           
         </p>
-        <div className="flex justify-center">
-          <a href="#contact"
-            className="bg-green-800 hover:bg-green-700 text-white py-3 px-6 rounded transition-all duration-300 mr-4"
-          >
-            Contact Me
+        <div className="mt-6 flex gap-10 justify-center">
+          <a href="mailto:hernandoabella@gmail.com" target="_blank">
+            <div className="relative group">
+              <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl bg-green-950 px-8 py-2 text-gray-200"><span className="relative z-10">Contact Me</span><span className="absolute inset-0 overflow-hidden rounded-md"><span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500  transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span></span></button>
+            </div>
           </a>
-          <a
-            href="https://calendly.com/hernandoabella/30min" target="_blank"
-            className="border border-white hover:bg-white hover:text-green-600 py-3 px-6 rounded transition-all duration-300"
-          >
-            Schedule a meet
+
+          <a href="https://calendly.com/hernandoabella/30min">
+            <div className="relative group">
+              <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl border-2 border-green-950 px-8 py-2 text-gray-200"><span className="relative z-10">Schedule a Meeting</span><span className="absolute inset-0 overflow-hidden rounded-md"><span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span></span></button>
+            </div>
           </a>
         </div>
       </div>
