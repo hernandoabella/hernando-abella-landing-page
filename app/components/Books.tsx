@@ -25,6 +25,15 @@ const Books = () => {
       { title: "Love in Brackets", image: "/book-1.jpg", link: "#" },
       { title: "While(True): Love", image: "/book-1.jpg", link: "#" },
     ],
+    "Algorithms & Data Structure": [
+      {
+        title: "The Art of Looping",
+        image: "/book-3.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
+      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
+    ],
     "Cheat Sheets": [
       {
         title: "200 C Programs",
@@ -79,15 +88,7 @@ const Books = () => {
       { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
       { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
     ],
-    "Algorithms & Data Structure": [
-      {
-        title: "The Art of Looping",
-        image: "/book-3.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
-      },
-      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
-      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
-    ],
+    
 
 
   };
