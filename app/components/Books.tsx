@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Image from "next/image";
+import { FiBookOpen, FiArrowRight } from "react-icons/fi";
 
 type Book = {
   title: string;
@@ -14,6 +15,25 @@ type Categories = {
 };
 
 const Books = () => {
+  const bonusFiles = [
+    "/BONUS/50-Concepts-Every-Java-Developer-Should-Know.pdf",
+    "/BONUS/120-Advanced-Javascript-Interview-Questions.pdf",
+    "/BONUS/150-Python-Pattern-Programs.pdf",
+    "/BONUS/250-Killer-JS-One-Liners.pdf",
+    "/BONUS/SQL-Cookbook.pdf",
+  ];
+  
+  const handleMultipleDownloads = useCallback(() => {
+    bonusFiles.forEach((file) => {
+      const link = document.createElement("a");
+      link.href = file;
+      link.download = file.split("/").pop() || "file";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }, []);
+
   const categories: Categories = {
 
     "Best Seller": [
@@ -22,75 +42,163 @@ const Books = () => {
         image: "/book-1.jpg",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
-      { title: "Love in Brackets", image: "/book-1.jpg", link: "#" },
-      { title: "While(True): Love", image: "/book-1.jpg", link: "#" },
+      {
+        title: "200+ Python Programs for Beginners",
+        image: "/python-programs.jpg",
+        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
+      },
+      
     ],
     "Algorithms & Data Structure": [
       {
-        title: "The Art of Looping",
-        image: "/book-3.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        title: "+300 Python Algoriths",
+        image: "/book-1.jpg",
+        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
-      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
-      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
+      { title: "Data Structures and Algorithms in Python", image: "/dsa-in-python.jpg", link: "#" },
+      
     ],
     "Cheat Sheets": [
       {
-        title: "200 C Programs",
-        image: "/c-programs.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
+        title: "The Ultimate AI Cheat Sheet",
+        image: "/ai-cheatsheet.png",
+        link: "#",
       },
-      { title: "200 Python Programs", image: "/python-programs.jpg", link: "#" },
-      { title: "200 Rust Programs", image: "/book-2.jpg", link: "#" },
+      {
+        title: "Excel Cheat Sheet",
+        image: "/excel-cheatsheet.png",
+        link: "#",
+      },
+      {
+        title: "SQL Cheat Sheet",
+        image: "/sql-cheatsheet.png",
+        link: "https://www.amazon.com/SQL-CheatSheet-Handbook-Essentials-Mastering-ebook/dp/B0DJCY3TPX",
+      },
+      {
+        title: "Python Cheat Sheet",
+        image: "/python-cheatsheet.jpg",
+        link: "https://www.amazon.com/Python-Cheat-Sheet-Essentials-Mastering-ebook/dp/B0DK22TT6N",
+      },
+      {
+        title: "JavaScript Cheat Sheet",
+        image: "/javascript-cheatsheet.png",
+        link: "#",
+      },
+      {
+        title: "Rust Cheat Sheet",
+        image: "/rust-cheatsheet.png",
+        link: "https://www.amazon.com/Rust-Cheat-Sheet-Essential-Patterns-ebook/dp/B0F5ZPJJ92",
+      },
+      {
+        title: "Go Cheat Sheet",
+        image: "/golang-cheatsheet.png",
+        link: "https://www.amazon.com/Cheat-Sheet-Reference-Developers-Essentials-ebook/dp/B0DYF9BNQV",
+      },
     ],
     "Program Collection": [
       {
         title: "200 C Programs",
         image: "/c-programs.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
+        link: "#",
       },
-      { title: "200 Python Programs", image: "/python-programs.jpg", link: "#" },
-      { title: "200 Rust Programs", image: "/book-2.jpg", link: "#" },
+      {
+        title: "200 C Programs",
+        image: "/python-programs.jpg",
+        link: "#",
+      },
+      {
+        title: "200 C Programs",
+        image: "/java-programs.jpg",
+        link: "#",
+      },
+      {
+        title: "200 C Programs",
+        image: "/java-programs.jpg",
+        link: "#",
+      },
+      {
+        title: "200 C Programs",
+        image: "/java-programs.jpg",
+        link: "https://www.amazon.com/200-Rust-Programs-Beginners-performance-ebook/dp/B0DHT9R764/",
+      }
+
+      
     ],
     "Killer One-Liners": [
       {
-        title: "The Loop Diaries",
-        image: "/book-2.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
+        title: "python-oneliner",
+        image: "/250-killer-python.jpg",
+        link: "#",
       },
-      { title: "Decode Me If You Can", image: "/book-2.jpg", link: "#" },
-      { title: "Try Except Love", image: "/book-2.jpg", link: "#" },
-    ],
-    "DSA": [
       {
-        title: "The Loop Diaries",
-        image: "/book-2.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
+        title: "js-oneliner",
+        image: "/250-killer-js.jpg",
+        link: "#",
       },
-      { title: "Decode Me If You Can", image: "/book-2.jpg", link: "#" },
-      { title: "Try Except Love", image: "/book-2.jpg", link: "#" },
+      {
+        title: "ruby-oneliner",
+        image: "/250-killer-ruby.jpg",
+        link: "#",
+      },
+      {
+        title: "typescript-oneliner",
+        image: "/250-killer-ts.jpg",
+        link: "#",
+      },
+      {
+        title: "csharp-oneliner",
+        image: "/250-killer-csharp.jpg",
+        link: "#",
+      },
     ],
     "Pattern Programs": [
       {
-        title: "The Art of Looping",
-        image: "/book-3.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        title: "pattern 1",
+        image: "/pattern-1.jpg",
+        link: "https://www.amazon.com/150-Python-Pattern-Programs-creativity-ebook/dp/B0CVNG3PRV",
       },
-      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
-      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
+      {
+        title: "pattern 2",
+        image: "/pattern-2.jpg",
+        link: "https://www.amazon.com/150-JavaScript-Pattern-Programs-creativity-ebook/dp/B0CTYK7NFR/",
+      },
+      {
+        title: "pattern 3",
+        image: "/pattern-3.jpg",
+        link: "https://www.amazon.com/150-Pattern-Programs-creativity-statements/dp/B0CTZW4Y9V",
+      },
+      
     ],
     "Design Patterns": [
       {
-        title: "The Art of Looping",
-        image: "/book-3.jpg",
+        title: "JS Design Patterns",
+        image: "/js-design-pattern.jpg",
         link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
       },
-      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
-      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
     ],
-    
-
-
+    "50 Concepts": [
+      {
+        title: "50-concepts-python",
+        image: "/50-concepts-python.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      {
+        title: "50-concepts-js-sharp",
+        image: "/50-concepts-js.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      {
+        title: "50-concepts-java-sharp",
+        image: "/50-concepts-java.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      {
+        title: "50-concepts-c-sharp",
+        image: "/50-concepts-c-sharp.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      
+    ],
   };
 
   const categoryKeys = Object.keys(categories);
@@ -122,8 +230,8 @@ const Books = () => {
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${selectedCategory === category
-                ? "bg-green-600 text-white shadow-lg"
-                : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
+              ? "bg-green-600 text-white shadow-lg"
+              : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
               }`}
           >
             {category}
@@ -153,14 +261,39 @@ const Books = () => {
                   className="group-hover:opacity-90 transition duration-300"
                 />
               </a>
-
             </div>
-
-
-
-
           </div>
         ))}
+      </div>
+
+      <div className="mt-20 flex gap-10 justify-center">
+        <a href="#" target="_blank" onClick={handleMultipleDownloads}>
+          <div className="relative group">
+            <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl bg-green-950 px-8 py-2 text-gray-200 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-2">
+                <FiBookOpen className="text-lg" />
+                Get Bonus!
+              </span>
+              <span className="absolute inset-0 overflow-hidden rounded-md">
+                <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+              </span>
+            </button>
+          </div>
+        </a>
+
+        <a href="#contact">
+          <div className="relative group">
+            <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl border-2 border-green-950 px-8 py-2 text-gray-200 flex items-center gap-2">
+              <span className="relative z-10 flex items-center gap-2">
+                <FiArrowRight className="text-lg" />
+                More Books
+              </span>
+              <span className="absolute inset-0 overflow-hidden rounded-md">
+                <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+              </span>
+            </button>
+          </div>
+        </a>
       </div>
     </section>
   );
