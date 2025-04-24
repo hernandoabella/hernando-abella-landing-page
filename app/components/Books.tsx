@@ -47,6 +47,16 @@ const Books = () => {
         image: "/python-programs.jpg",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
+      {
+        title: "200+ Python Programs for Beginners",
+        image: "/python-cheatsheet.jpg",
+        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
+      },
+      {
+        title: "clean code in python",
+        image: "/cleancodeinpython.jpg",
+        link: "https://www.amazon.com/Clean-Code-Python-Essentials-Mastering-ebook/dp/B0DTYXGQTW",
+      },
       
     ],
     "Algorithms & Data Structure": [
@@ -99,26 +109,26 @@ const Books = () => {
       {
         title: "200 C Programs",
         image: "/c-programs.jpg",
-        link: "#",
+        link: "https://www.amazon.com/Programs-Beginners-Step-Step-Coding-ebook/dp/B0DNDB7K59",
       },
       {
-        title: "200 C Programs",
+        title: "200 Python Programs",
         image: "/python-programs.jpg",
-        link: "#",
+        link: "https://www.amazon.com/200-Python-Programs-Beginners/dp/B0CVLQTKHG",
       },
       {
-        title: "200 C Programs",
-        image: "/java-programs.jpg",
-        link: "#",
+        title: "200 JS Programs",
+        image: "/javascript-programs.jpg",
+        link: "https://www.amazon.com/200-JavaScript-Programs-Beginners-Book-ebook/dp/B0CQ4FBQ8H",
       },
       {
-        title: "200 C Programs",
+        title: "200 java Programs",
         image: "/java-programs.jpg",
-        link: "#",
+        link: "https://www.amazon.com/Java-Programs-Beginners-Hernando-Abella-ebook/dp/B0DM4HMBG8",
       },
       {
-        title: "200 C Programs",
-        image: "/java-programs.jpg",
+        title: "200 rust Programs",
+        image: "/rust-programs.jpg",
         link: "https://www.amazon.com/200-Rust-Programs-Beginners-performance-ebook/dp/B0DHT9R764/",
       }
 
@@ -128,27 +138,27 @@ const Books = () => {
       {
         title: "python-oneliner",
         image: "/250-killer-python.jpg",
-        link: "#",
+        link: "https://www.amazon.com/250-Killer-Python-One-Liners-solutions-ebook/dp/B0D442PCLX",
       },
       {
         title: "js-oneliner",
         image: "/250-killer-js.jpg",
-        link: "#",
+        link: "https://www.amazon.com/250-JavaScript-Killer-One-Liners-Transform-ebook/dp/B0CN51HJQQ",
       },
       {
         title: "ruby-oneliner",
         image: "/250-killer-ruby.jpg",
-        link: "#",
+        link: "https://www.amazon.com/250-Killer-Ruby-One-Liners-Transform-ebook/dp/B0CXF57XT9",
       },
       {
         title: "typescript-oneliner",
         image: "/250-killer-ts.jpg",
-        link: "#",
+        link: "https://www.amazon.com/250-Killer-TypeScript-One-Liners-Transform-ebook/dp/B0CYHZ5QKJ",
       },
       {
         title: "csharp-oneliner",
         image: "/250-killer-csharp.jpg",
-        link: "#",
+        link: "https://www.amazon.com/250-Killer-One-Liners-Transform-solutions-ebook/dp/B0D2ZM71J8",
       },
     ],
     "Pattern Programs": [
@@ -180,22 +190,22 @@ const Books = () => {
       {
         title: "50-concepts-python",
         image: "/50-concepts-python.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        link: "https://www.amazon.com/Python-Concepts-Every-Developer-Should-ebook",
       },
       {
         title: "50-concepts-js-sharp",
         image: "/50-concepts-js.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        link: "https://www.amazon.com/JavaScript-Concepts-Every-Developer-Should-ebook/dp/B0CNC4WZT6",
       },
       {
         title: "50-concepts-java-sharp",
         image: "/50-concepts-java.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        link: "https://www.amazon.com/Java-Concepts-Every-Developer-Should-ebook/dp/B0CPPZ1BVM",
       },
       {
         title: "50-concepts-c-sharp",
         image: "/50-concepts-c-sharp.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+        link: "https://www.amazon.com/Concepts-Every-Developer-Should-Know-ebook/dp/B0CVFXGJZ9",
       },
       
     ],
@@ -218,7 +228,7 @@ const Books = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
 
       <div className="relative z-10 text-center mb-10">
-        <h2 className="font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
+        <h2 className="font-extrabold text-white text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
           Explore My Books
         </h2>
       </div>
