@@ -15,15 +15,24 @@ type Categories = {
 
 const Books = () => {
   const categories: Categories = {
-    
+
     "Best Seller": [
       {
-        title: "Coding Love Notes",
+        title: "300+ Python Algorithms",
         image: "/book-1.jpg",
-        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0D442PCLX",
+        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
       { title: "Love in Brackets", image: "/book-1.jpg", link: "#" },
       { title: "While(True): Love", image: "/book-1.jpg", link: "#" },
+    ],
+    "Cheat Sheets": [
+      {
+        title: "200 C Programs",
+        image: "/c-programs.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella/dp/B0CVLQTKHG",
+      },
+      { title: "200 Python Programs", image: "/python-programs.jpg", link: "#" },
+      { title: "200 Rust Programs", image: "/book-2.jpg", link: "#" },
     ],
     "Program Collection": [
       {
@@ -61,8 +70,26 @@ const Books = () => {
       { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
       { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
     ],
-    
-    
+    "Design Patterns": [
+      {
+        title: "The Art of Looping",
+        image: "/book-3.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
+      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
+    ],
+    "Algorithms & Data Structure": [
+      {
+        title: "The Art of Looping",
+        image: "/book-3.jpg",
+        link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      { title: "Infinite Iterations", image: "/book-3.jpg", link: "#" },
+      { title: "Loop Me Gently", image: "/book-3.jpg", link: "#" },
+    ],
+
+
   };
 
   const categoryKeys = Object.keys(categories);
@@ -93,11 +120,10 @@ const Books = () => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${
-              selectedCategory === category
+            className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${selectedCategory === category
                 ? "bg-green-600 text-white shadow-lg"
                 : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
-            }`}
+              }`}
           >
             {category}
           </button>
@@ -111,28 +137,27 @@ const Books = () => {
             key={index}
             className="group transform transition duration-500 hover:scale-105 hover:shadow-xl"
           >
-            <div className="relative w-full h-80 rounded-xl overflow-hidden border border-green-700 shadow-md">
-              <Image
-                src={book.image}
-                alt={book.title}
-                layout="fill"
-                objectFit="cover"
-                className="group-hover:opacity-90 transition duration-300"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-base font-semibold text-white truncate px-2">
-                {book.title}
-              </h3>
+            <div className="relative w-full h-96">
               <a
                 href={book.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-2 px-4 py-2 text-sm bg-green-600 text-white rounded-full shadow hover:bg-green-700 transition duration-300"
               >
-                View Book
+                <Image
+                  src={book.image}
+                  alt={book.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="group-hover:opacity-90 transition duration-300"
+                />
               </a>
+
             </div>
+
+
+
+
           </div>
         ))}
       </div>
