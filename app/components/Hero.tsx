@@ -51,7 +51,7 @@ const Hero = () => {
 
         {/* Name */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Hi 👋, I'm Hernando!
+          Hi 👋, I&apos;m Hernando!
         </h1>
 
         {/* Typewriter */}
