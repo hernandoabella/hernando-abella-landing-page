@@ -33,13 +33,22 @@ const CTA = () => {
           </a>
 
           {/* Secondary Button */}
-          <a href="https://calendly.com/hernandoabella/30min" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://calendly.com/hernandoabella/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="relative group">
               <button className="group relative h-12 overflow-hidden rounded-3xl border-2 border-violet-500 px-8 py-2 text-white font-semibold shadow-md transition-all duration-300 hover:bg-violet-600/10 flex items-center gap-3">
-                <FiCalendar className="text-xl group-hover:text-violet-400 transition-colors duration-300" />
-                <span className="relative z-10 group-hover:text-violet-400 transition-colors duration-300">Schedule a Meeting</span>
-                <span className="absolute inset-0 overflow-hidden rounded-md">
-                  <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-violet-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+                {/* Icon + Text: z-10 */}
+                <span className="relative z-10 flex items-center gap-2">
+                  <FiCalendar className="text-xl" />
+                  <span>Schedule a Meeting</span>
+                </span>
+
+                {/* Animated background */}
+                <span className="absolute inset-0 overflow-hidden rounded-md z-0">
+                  <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-violet-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150" />
                 </span>
               </button>
             </div>
