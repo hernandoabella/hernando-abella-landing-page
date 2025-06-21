@@ -23,8 +23,8 @@ const bonusFiles = [
 ];
 
 const Books = () => {
-  
-  
+
+
   const handleMultipleDownloads = useCallback(() => {
     bonusFiles.forEach((file) => {
       const link = document.createElement("a");
@@ -35,7 +35,7 @@ const Books = () => {
       document.body.removeChild(link);
     });
   }, [bonusFiles]);
-  
+
 
   const categories: Categories = {
 
@@ -60,7 +60,7 @@ const Books = () => {
         image: "/cleancodeinpython.jpg",
         link: "https://www.amazon.com/Clean-Code-Python-Essentials-Mastering-ebook/dp/B0DTYXGQTW",
       },
-      
+
     ],
     "Algorithms & Data Structure": [
       {
@@ -69,7 +69,7 @@ const Books = () => {
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
       { title: "Data Structures and Algorithms in Python", image: "/dsa-in-python.jpg", link: "#" },
-      
+
     ],
     "Cheat Sheets": [
       {
@@ -135,7 +135,7 @@ const Books = () => {
         link: "https://www.amazon.com/200-Rust-Programs-Beginners-performance-ebook/dp/B0DHT9R764/",
       }
 
-      
+
     ],
     "Killer One-Liners": [
       {
@@ -180,7 +180,7 @@ const Books = () => {
         image: "/pattern-3.jpg",
         link: "https://www.amazon.com/150-Pattern-Programs-creativity-statements/dp/B0CTZW4Y9V",
       },
-      
+
     ],
     "Design Patterns": [
       {
@@ -210,7 +210,7 @@ const Books = () => {
         image: "/50-concepts-c-sharp.jpg",
         link: "https://www.amazon.com/Concepts-Every-Developer-Should-Know-ebook/dp/B0CVFXGJZ9",
       },
-      
+
     ],
   };
 
@@ -218,33 +218,33 @@ const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryKeys[0]);
 
   return (
-    <section
-      className="relative p-10 text-gray-100"
-      id="books"
-      style={{
-        backgroundImage: "url('/bg-image.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay for darker look */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
+    <section className="relative min-h-screen p-10 text-gray-100 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] overflow-hidden">
+      <svg className="absolute top-0 left-0 w-full h-full opacity-[0.06] z-0" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
+            <circle cx="20" cy="20" r="2" fill="#10B981" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex)" />
+      </svg>
 
       <div className="relative z-10 text-center mb-10">
-        <h2 className="font-extrabold text-white text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
+        <h2 className="font-extrabold text-white text-4xl sm:text-5xl xl:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-green-400 to-lime-500">
           Explore My Books
         </h2>
+        <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
+          Curated resources for mastering programming, boosting productivity, and cracking interviews.
+        </p>
       </div>
 
-      {/* Tab Buttons */}
       <div className="relative z-10 flex justify-center gap-4 mb-12 flex-wrap">
         {categoryKeys.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${selectedCategory === category
-              ? "bg-green-600 text-white shadow-lg"
-              : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
+                ? "bg-green-600 text-white shadow-lg"
+                : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
               }`}
           >
             {category}
@@ -252,19 +252,17 @@ const Books = () => {
         ))}
       </div>
 
-      {/* Books Grid */}
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto">
-        {categories[selectedCategory]?.map((book: Book, index: number) => (
+        {categories[selectedCategory]?.map((book, index) => (
           <div
             key={index}
             className="group transform transition duration-500 hover:scale-105 hover:shadow-xl"
           >
-            <div className="relative w-full h-96">
+            <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg">
               <a
                 href={book.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 px-4 py-2 text-sm bg-green-600 text-white rounded-full shadow hover:bg-green-700 transition duration-300"
               >
                 <Image
                   src={book.image}
@@ -279,7 +277,7 @@ const Books = () => {
         ))}
       </div>
 
-      <div className="mt-20 flex gap-10 justify-center">
+      <div className="mt-20 flex gap-10 justify-center relative z-10">
         <a href="#" target="_blank" onClick={handleMultipleDownloads}>
           <div className="relative group">
             <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl bg-green-950 px-8 py-2 text-gray-200 flex items-center gap-2">
