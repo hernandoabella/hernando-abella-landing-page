@@ -58,7 +58,7 @@ const AboutMe = () => {
             Hi, I&apos;m Hernando — a passionate Full-Stack Developer experienced in building dynamic and scalable web applications. I love solving problems and creating useful tools.
           </p>
           <p className="text-lg sm:text-xl leading-relaxed text-gray-300">
-            I’m always exploring new tech, writing books, and pushing myself to build better. When I'm not coding, you can find me enjoying nature or diving deep into the latest tech trends.
+            I&apos;m always exploring new tech, writing books, and pushing myself to build better. When I&apos;m not coding, you can find me enjoying nature or diving deep into the latest tech trends.
           </p>
         </div>
 
