@@ -24,7 +24,6 @@ const bonusFiles = [
 
 const Books = () => {
 
-
   const handleMultipleDownloads = useCallback(() => {
     bonusFiles.forEach((file) => {
       const link = document.createElement("a");
@@ -34,8 +33,7 @@ const Books = () => {
       link.click();
       document.body.removeChild(link);
     });
-  }, [bonusFiles]);
-
+  }, []);
 
   const categories: Categories = {
 
@@ -243,8 +241,8 @@ const Books = () => {
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${selectedCategory === category
-                ? "bg-green-600 text-white shadow-lg"
-                : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
+              ? "bg-green-600 text-white shadow-lg"
+              : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
               }`}
           >
             {category}
