@@ -216,7 +216,7 @@ const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryKeys[0]);
 
   return (
-    <section className="relative min-h-screen p-10 text-gray-100 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] overflow-hidden">
+    <section id="books" className="relative min-h-screen p-10 text-gray-100 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] overflow-hidden">
       <svg className="absolute top-0 left-0 w-full h-full opacity-[0.06] z-0" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="hex" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
