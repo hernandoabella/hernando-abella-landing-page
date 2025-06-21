@@ -50,7 +50,7 @@ const Header = () => {
           transition={{ duration: 0.8, ease: "easeOut", type: "spring", stiffness: 100 }}
           className="text-2xl md:text-3xl font-bold text-green-500"
         >
-          &lt;HernandoAbella/&gt;
+          Hernando Abella
         </motion.h1>
 
         {/* Desktop Nav */}
