@@ -6,59 +6,81 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="flex items-center justify-center bg-gradient-to-r from-[#0d0d0d] to-[#1d1d1d] dark:bg-[#131313] text-gray-900 dark:text-gray-100 min-h-screen px-4"
+      className="relative flex items-center justify-center min-h-screen px-6 py-20 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white overflow-hidden"
     >
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-12">
+      {/* ⬢ Hex Pattern Background */}
+      <svg
+        className="absolute top-0 left-0 w-full h-full opacity-[0.03] z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        fill="none"
+      >
+        <defs>
+          <pattern id="hex" width="20" height="17.32" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+            <path
+              d="M10 0 L20 5 L20 15 L10 20 L0 15 L0 5 Z"
+              stroke="#38bdf8"
+              strokeWidth="0.3"
+              fill="none"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex)" />
+      </svg>
+
+      {/* ⬣ Diagonal Line Grid */}
+      <svg
+        className="absolute top-0 right-0 w-full h-full opacity-10 z-0"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="grid"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+          >
+            <path d="M0 0 L0 40" stroke="#94a3b8" strokeWidth="0.2" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+
+      {/* Content */}
+      <div className="relative z-10 container max-w-7xl flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Text Content */}
         <div className="w-full md:w-1/2 text-left">
-          <h2 className="mb-5 font-extrabold text-transparent text-3xl sm:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-green-100 via-green-300 to-green-500 bg-transparent h-full">
+          <h2 className="mb-6 text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-sky-200 via-sky-400 to-sky-600 bg-clip-text text-transparent">
             About Me
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl mb-4 leading-relaxed">
-            Hi, I&apos;m Hernando, a passionate Full-Stack Developer with experience
-            in designing and building dynamic web applications. My journey has
-            allowed me to work with a wide variety of technologies, solving
-            complex problems and creating innovative solutions.
+          <p className="text-lg sm:text-xl mb-5 leading-relaxed text-gray-200">
+            Hi, I&apos;m Hernando — a passionate Full-Stack Developer experienced in building dynamic and scalable web applications. I love solving problems and creating useful tools.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed">
-            I&apos;m always exploring new tech and improving my skills to deliver
-            scalable and efficient code. When not coding, I’m geeking out on tech
-            trends or soaking up nature!
+          <p className="text-lg sm:text-xl leading-relaxed text-gray-300">
+            I’m always exploring new tech, writing books, and pushing myself to build better. When I'm not coding, you can find me enjoying nature or diving deep into the latest tech trends.
           </p>
         </div>
 
-        {/* Skills Circle */}
-        <div className="relative w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="relative w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center">
-            <div className="absolute inset-10 flex items-center justify-center bg-gradient-to-t from-green-700 via-green-800 to-green-900">
-              {/* Icons Container */}
-              <div className="grid grid-cols-4 gap-10 justify-items-center items-center">
-                <i className="devicon-figma-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-html5-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-css3-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-bootstrap-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-tailwindcss-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-javascript-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-typescript-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-react-original text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-vuejs-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-nodejs-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-php-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-mongodb-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-mysql-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-git-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-github-original text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-docker-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-postgresql-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                
-                <i className="devicon-express-original text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-graphql-plain text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-                <i className="devicon-nextjs-original text-5xl sm:text-6xl text-green-500 hover:text-green-300 transition duration-300 ease-in-out transform hover:scale-125" />
-              </div>
+        {/* Skills Panel */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="relative flex items-center justify-center p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl">
+            <div className="grid grid-cols-6 gap-5 sm:gap-6">
+              {[
+                "figma-plain", "html5-plain", "css3-plain", "bootstrap-plain",
+                "tailwindcss-plain", "javascript-plain", "typescript-plain", "react-original",
+                "vuejs-plain", "nodejs-plain", "php-plain", "mongodb-plain",
+                "mysql-plain", "git-plain", "github-original", "docker-plain",
+                "postgresql-plain", "express-original", "graphql-plain", "nextjs-original",
+              ].map((icon) => (
+                <i
+                  key={icon}
+                  className={`devicon-${icon} text-3xl sm:text-4xl text-cyan-400 hover:text-cyan-300 transition transform hover:scale-110`}
+                />
+              ))}
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
