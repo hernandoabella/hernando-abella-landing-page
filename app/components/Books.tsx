@@ -36,12 +36,12 @@ const Books = () => {
       {
         title: "200+ Python Programs for Beginners",
         image: "/python-programs.jpg",
-        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
+        link: "https://www.amazon.com/200-Python-Programs-Beginners/dp/B0CVLQTKHG",
       },
       {
-        title: "200+ Python Programs for Beginners",
+        title: "Python Cheat Sheet",
         image: "/python-cheatsheet.jpg",
-        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
+        link: "https://www.amazon.com/Python-Cheat-Sheet-Essentials-Mastering-ebook/dp/B0DK22TT6N",
       },
       {
         title: "clean code in python",
