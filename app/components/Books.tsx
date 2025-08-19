@@ -52,7 +52,7 @@ const Books = () => {
     ],
     "Algorithms & Data Structure": [
       {
-        title: "+300 Python Algoriths",
+        title: "+300 Python Algorithms",
         image: "/book-1.jpg",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
@@ -63,12 +63,12 @@ const Books = () => {
       {
         title: "The Ultimate AI Cheat Sheet",
         image: "/ai-cheatsheet.png",
-        link: "#",
+        link: "https://www.amazon.com/Ultimate-Cheat-sheet-Entrepreneurs-Essentials/dp/B0F283MSGT",
       },
       {
         title: "Excel Cheat Sheet",
         image: "/excel-cheatsheet.png",
-        link: "#",
+        link: "https://www.amazon.com/Excel-Cheat-Sheet-Essentials-Mastering/dp/B0F313PPY4/",
       },
       {
         title: "SQL Cheat Sheet",
@@ -83,7 +83,7 @@ const Books = () => {
       {
         title: "JavaScript Cheat Sheet",
         image: "/javascript-cheatsheet.png",
-        link: "#",
+        link: "https://www.amazon.com/JavaScript-Cheat-Sheet-Essential-Essentials/dp/B0DKTH66HK",
       },
       {
         title: "Rust Cheat Sheet",
@@ -269,7 +269,7 @@ const Books = () => {
           <FiBookOpen /> Get Bonus!
         </button>
         <a
-          href="#contact"
+          href="https://www.amazon.com/s?k=hernando+abella&crid=1FUBDK4AOIJZC&sprefix=hernando+ab%2Caps%2C449&ref=nb_sb_noss_2" target="_blank"
           className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-green-700 text-white font-semibold hover:bg-green-700/20 transition"
         >
           <FiArrowRight /> More Books
