@@ -4,15 +4,8 @@ import React, { useState, useCallback } from "react";
 import Image from "next/image";
 import { FiBookOpen, FiArrowRight } from "react-icons/fi";
 
-type Book = {
-  title: string;
-  image: string;
-  link: string;
-};
-
-type Categories = {
-  [key: string]: Book[];
-};
+type Book = { title: string; image: string; link: string };
+type Categories = { [key: string]: Book[] };
 
 const bonusFiles = [
   "/BONUS/50-Concepts-Every-Java-Developer-Should-Know.pdf",
@@ -23,15 +16,12 @@ const bonusFiles = [
 ];
 
 const Books = () => {
-
   const handleMultipleDownloads = useCallback(() => {
     bonusFiles.forEach((file) => {
-      const link = document.createElement("a");
-      link.href = file;
-      link.download = file.split("/").pop() || "file";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const a = document.createElement("a");
+      a.href = file;
+      a.download = file.split("/").pop() || "file";
+      a.click();
     });
   }, []);
 
@@ -108,27 +98,27 @@ const Books = () => {
     ],
     "Program Collection": [
       {
-        title: "200 C Programs",
+        title: "200+ C Programs for Beginners",
         image: "/c-programs.jpg",
         link: "https://www.amazon.com/Programs-Beginners-Step-Step-Coding-ebook/dp/B0DNDB7K59",
       },
       {
-        title: "200 Python Programs",
+        title: "200+ Python Programs for Beginners",
         image: "/python-programs.jpg",
         link: "https://www.amazon.com/200-Python-Programs-Beginners/dp/B0CVLQTKHG",
       },
       {
-        title: "200 JS Programs",
+        title: "200+ JS Programs for Beginners",
         image: "/javascript-programs.jpg",
         link: "https://www.amazon.com/200-JavaScript-Programs-Beginners-Book-ebook/dp/B0CQ4FBQ8H",
       },
       {
-        title: "200 java Programs",
+        title: "200+ java Programs for Beginners",
         image: "/java-programs.jpg",
         link: "https://www.amazon.com/Java-Programs-Beginners-Hernando-Abella-ebook/dp/B0DM4HMBG8",
       },
       {
-        title: "200 rust Programs",
+        title: "200+ rust Programs for Beginners",
         image: "/rust-programs.jpg",
         link: "https://www.amazon.com/200-Rust-Programs-Beginners-performance-ebook/dp/B0DHT9R764/",
       }
@@ -137,44 +127,44 @@ const Books = () => {
     ],
     "Killer One-Liners": [
       {
-        title: "python-oneliner",
+        title: "250+ Killer Python One-Liners",
         image: "/250-killer-python.jpg",
         link: "https://www.amazon.com/250-Killer-Python-One-Liners-solutions-ebook/dp/B0D442PCLX",
       },
       {
-        title: "js-oneliner",
+        title: "250+ Killer JavaScript One-Liners",
         image: "/250-killer-js.jpg",
         link: "https://www.amazon.com/250-JavaScript-Killer-One-Liners-Transform-ebook/dp/B0CN51HJQQ",
       },
       {
-        title: "ruby-oneliner",
+        title: "250+ Killer Ruby One-Liners",
         image: "/250-killer-ruby.jpg",
         link: "https://www.amazon.com/250-Killer-Ruby-One-Liners-Transform-ebook/dp/B0CXF57XT9",
       },
       {
-        title: "typescript-oneliner",
+        title: "250+ Killer TypeScript One-Liners",
         image: "/250-killer-ts.jpg",
         link: "https://www.amazon.com/250-Killer-TypeScript-One-Liners-Transform-ebook/dp/B0CYHZ5QKJ",
       },
       {
-        title: "csharp-oneliner",
+        title: "250+ Killer C-Sharp One-Liners",
         image: "/250-killer-csharp.jpg",
         link: "https://www.amazon.com/250-Killer-One-Liners-Transform-solutions-ebook/dp/B0D2ZM71J8",
       },
     ],
     "Pattern Programs": [
       {
-        title: "pattern 1",
+        title: "150+ Python Pattern Programs",
         image: "/pattern-1.jpg",
         link: "https://www.amazon.com/150-Python-Pattern-Programs-creativity-ebook/dp/B0CVNG3PRV",
       },
       {
-        title: "pattern 2",
+        title: "150+ JavaScript Pattern Programs",
         image: "/pattern-2.jpg",
         link: "https://www.amazon.com/150-JavaScript-Pattern-Programs-creativity-ebook/dp/B0CTYK7NFR/",
       },
       {
-        title: "pattern 3",
+        title: "150+ C Pattern Programs",
         image: "/pattern-3.jpg",
         link: "https://www.amazon.com/150-Pattern-Programs-creativity-statements/dp/B0CTZW4Y9V",
       },
@@ -182,29 +172,29 @@ const Books = () => {
     ],
     "Design Patterns": [
       {
-        title: "JS Design Patterns",
+        title: "Advanced JavaScript Design Patterns",
         image: "/js-design-pattern.jpg",
         link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
       },
     ],
     "50 Concepts": [
       {
-        title: "50-concepts-python",
+        title: "50 Python Concepts Every Developer Should Know",
         image: "/50-concepts-python.jpg",
         link: "https://www.amazon.com/Python-Concepts-Every-Developer-Should-ebook",
       },
       {
-        title: "50-concepts-js-sharp",
+        title: "50 JavaScript Concepts Every Developer Should Know",
         image: "/50-concepts-js.jpg",
         link: "https://www.amazon.com/JavaScript-Concepts-Every-Developer-Should-ebook/dp/B0CNC4WZT6",
       },
       {
-        title: "50-concepts-java-sharp",
+        title: "50 Java Concepts Every Developer Should Know",
         image: "/50-concepts-java.jpg",
         link: "https://www.amazon.com/Java-Concepts-Every-Developer-Should-ebook/dp/B0CPPZ1BVM",
       },
       {
-        title: "50-concepts-c-sharp",
+        title: "50 C-Sharp Concepts Every Developer Should Know",
         image: "/50-concepts-c-sharp.jpg",
         link: "https://www.amazon.com/Concepts-Every-Developer-Should-Know-ebook/dp/B0CVFXGJZ9",
       },
@@ -213,95 +203,76 @@ const Books = () => {
   };
 
   const categoryKeys = Object.keys(categories);
-  const [selectedCategory, setSelectedCategory] = useState<string>(categoryKeys[0]);
+  const [selectedCategory, setSelectedCategory] = useState(categoryKeys[0]);
 
   return (
-    <section id="books" className="relative min-h-screen p-10 text-gray-100 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] overflow-hidden">
-      <svg className="absolute top-0 left-0 w-full h-full opacity-[0.06] z-0" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hex" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
-            <circle cx="20" cy="20" r="2" fill="#10B981" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hex)" />
-      </svg>
-
-      <div className="relative z-10 text-center mb-10">
-        <h2 className="font-extrabold text-white text-4xl sm:text-5xl xl:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-green-400 to-lime-500">
+    <section className="min-h-screen p-6 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] text-gray-100">
+      {/* Header */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-green-400 to-lime-500">
           Explore My Books
         </h2>
-        <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
-          Curated resources for mastering programming, boosting productivity, and cracking interviews.
+        <p className="mt-4 text-slate-300 max-w-xl mx-auto">
+          Curated resources for programming, productivity, and interviews.
         </p>
       </div>
 
-      <div className="relative z-10 flex justify-center gap-4 mb-12 flex-wrap">
-        {categoryKeys.map((category) => (
+      {/* Categories */}
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {categoryKeys.map((cat) => (
           <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm sm:text-base transition duration-300 transform hover:scale-105 font-medium ${selectedCategory === category
-              ? "bg-green-600 text-white shadow-lg"
-              : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
-              }`}
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full text-sm sm:text-base transition transform hover:scale-105 ${
+              selectedCategory === cat
+                ? "bg-green-600 text-white shadow"
+                : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
+            }`}
           >
-            {category}
+            {cat}
           </button>
         ))}
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto">
-        {categories[selectedCategory]?.map((book, index) => (
-          <div
-            key={index}
-            className="group transform transition duration-500 hover:scale-105 hover:shadow-xl"
+      {/* Books Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {categories[selectedCategory]?.map((book, i) => (
+          <a
+            key={i}
+            href={book.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition"
           >
-            <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg">
-              <a
-                href={book.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={book.image}
-                  alt={book.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="group-hover:opacity-90 transition duration-300"
-                />
-              </a>
+            <div className="relative w-full h-72">
+              <Image
+                src={book.image}
+                alt={book.title}
+                layout="fill"
+                objectFit="cover"
+                className="group-hover:opacity-90 transition"
+              />
             </div>
-          </div>
+            <div className="p-4 bg-zinc-900">
+              <h3 className="font-semibold">{book.title}</h3>
+            </div>
+          </a>
         ))}
       </div>
 
-      <div className="mt-20 flex gap-10 justify-center relative z-10">
-        <a href="#" target="_blank" onClick={handleMultipleDownloads}>
-          <div className="relative group">
-            <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl bg-green-950 px-8 py-2 text-gray-200 flex items-center gap-2">
-              <span className="relative z-10 flex items-center gap-2">
-                <FiBookOpen className="text-lg" />
-                Get Bonus!
-              </span>
-              <span className="absolute inset-0 overflow-hidden rounded-md">
-                <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
-              </span>
-            </button>
-          </div>
-        </a>
-
-        <a href="#contact">
-          <div className="relative group">
-            <button className="group relative h-12 overflow-hidden overflow-x-hidden rounded-3xl border-2 border-green-950 px-8 py-2 text-gray-200 flex items-center gap-2">
-              <span className="relative z-10 flex items-center gap-2">
-                <FiArrowRight className="text-lg" />
-                More Books
-              </span>
-              <span className="absolute inset-0 overflow-hidden rounded-md">
-                <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-green-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
-              </span>
-            </button>
-          </div>
+      {/* Bonus & More */}
+      <div className="mt-16 flex flex-wrap justify-center gap-4">
+        <button
+          onClick={handleMultipleDownloads}
+          className="flex items-center gap-2 px-6 py-3 rounded-full bg-green-700 text-white font-semibold hover:bg-green-600 transition"
+        >
+          <FiBookOpen /> Get Bonus!
+        </button>
+        <a
+          href="#contact"
+          className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-green-700 text-white font-semibold hover:bg-green-700/20 transition"
+        >
+          <FiArrowRight /> More Books
         </a>
       </div>
     </section>
