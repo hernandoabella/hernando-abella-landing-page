@@ -90,45 +90,6 @@ const services = [
     ],
     price: "Starting at $399",
   },
-  {
-    title: "Database Design & Optimization",
-    description:
-      "Plan and optimize your database architecture for scalability and performance.",
-    icon: <FaRulerCombined className="text-4xl text-cyan-400" />,
-    includes: [
-      "Schema design (SQL/NoSQL)",
-      "Indexing & query optimization",
-      "Data migration",
-      "ER diagram delivery",
-    ],
-    price: "Starting at $249",
-  },
-  {
-    title: "Security & Auth Systems",
-    description:
-      "Secure your web apps with modern auth systems, roles, permissions & token strategies.",
-    icon: <FaPaintBrush className="text-4xl text-cyan-400" />,
-    includes: [
-      "JWT / OAuth / 2FA",
-      "Role-based access",
-      "Rate limiting",
-      "Security best practices",
-    ],
-    price: "Starting at $349",
-  },
-  {
-    title: "Maintenance & Support",
-    description:
-      "Keep your website secure, updated, and performing at its best with our monthly care plans.",
-    icon: <FaTools className="text-4xl text-cyan-400" />,
-    includes: [
-      "Security updates",
-      "Bug fixes & performance checks",
-      "Monthly backups",
-      "Email/Slack support",
-    ],
-    price: "Starting at $49/month",
-  },
 ];
 
 const Services = () => {
@@ -137,9 +98,9 @@ const Services = () => {
       id="services"
       className="relative min-h-screen px-6 py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-hidden flex items-center justify-center"
     >
-      {/* Background Mesh */}
+      {/* Background Mesh Glow */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.05] z-0"
+        className="absolute inset-0 w-full h-full opacity-[0.06] z-0"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -159,12 +120,12 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-6 text-center font-extrabold text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-sky-200 via-sky-400 to-sky-600"
+          className="mb-6 text-center font-extrabold text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 via-cyan-400 to-cyan-600"
         >
           Available Services
         </motion.h2>
 
-        {/* Optional Subtitle */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,33 +133,49 @@ const Services = () => {
           viewport={{ once: true }}
           className="mb-12 text-center text-slate-300 text-lg max-w-2xl"
         >
-          Everything you need to build, launch, and maintain stunning web experiences.
+          Everything you need to build, launch, and maintain stunning web
+          experiences.
         </motion.p>
 
-        {/* Cards */}
+        {/* Service Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, rotateX: 2, rotateY: 2 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center text-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 p-6 sm:p-8"
+              className="group relative flex flex-col items-center text-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-cyan-500/30 transition-all duration-300"
             >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-cyan-300">
-                {service.title}
-              </h3>
-              <p className="text-slate-300 text-sm mb-4">{service.description}</p>
-              <ul className="text-sm text-slate-400 list-disc list-inside mb-4 space-y-1 text-left mx-auto max-w-xs">
-                {service.includes.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-              <p className="text-cyan-400 font-semibold text-sm mt-auto">
-                {service.price}
-              </p>
+              {/* Animated border glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/30 via-blue-400/30 to-cyan-400/30 opacity-0 group-hover:opacity-100 blur-md transition duration-500"></div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <motion.div
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ repeat: Infinity, duration: 3 }}
+                  className="mb-4"
+                >
+                  {service.icon}
+                </motion.div>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-cyan-300">
+                  {service.title}
+                </h3>
+                <p className="text-slate-300 text-sm mb-4">
+                  {service.description}
+                </p>
+                <ul className="text-sm text-slate-400 list-disc list-inside mb-4 space-y-1 text-left mx-auto max-w-xs">
+                  {service.includes.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold text-base">
+                  {service.price}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
