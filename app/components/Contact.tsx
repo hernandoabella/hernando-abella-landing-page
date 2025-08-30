@@ -40,7 +40,7 @@ const ContactAndFooter = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Let's <span className="text-green-500">Work Together</span>
+          Let&apos;s <span className="text-green-500">Work Together</span>
         </motion.h2>
 
         {/* Description */}
@@ -51,7 +51,7 @@ const ContactAndFooter = () => {
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Ready to bring your next project to life? Let's discuss how we can create something amazing together.
+          Ready to bring your next project to life? Let&apos;s discuss how we can create something amazing together.
         </motion.p>
 
         {/* Contact Info */}
