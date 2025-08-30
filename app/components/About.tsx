@@ -51,7 +51,7 @@ const AboutMe = () => {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Hey, I'm Hernando, a passionate Full-Stack Developer who thrives on building 
+            Hey, I&apos;m Hernando, a passionate Full-Stack Developer who thrives on building 
             fast, scalable, and intuitive web applications. I specialize in transforming 
             complex challenges into elegant, user-friendly solutions.
           </motion.p>
@@ -63,7 +63,7 @@ const AboutMe = () => {
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            When I'm not coding, you'll find me writing tech books, exploring new frameworks, 
+            When I&apos;m not coding, you&apos;ll find me writing tech books, exploring new frameworks, 
             or sharing knowledge with the developer community. My mission is to create digital 
             experiences that not only look great but also make a meaningful impact.
           </motion.p>
