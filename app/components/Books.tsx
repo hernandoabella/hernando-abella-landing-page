@@ -2,7 +2,8 @@
 
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
-import { FiBookOpen, FiArrowRight } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiBookOpen, FiArrowRight, FiExternalLink, FiDownload } from "react-icons/fi";
 
 type Book = { title: string; image: string; link: string };
 type Categories = { [key: string]: Book[] };
@@ -26,7 +27,6 @@ const Books = () => {
   }, []);
 
   const categories: Categories = {
-
     "Best Seller": [
       {
         title: "300+ Python Algorithms",
@@ -48,7 +48,6 @@ const Books = () => {
         image: "/cleancodeinpython.jpg",
         link: "https://www.amazon.com/Clean-Code-Python-Essentials-Mastering-ebook/dp/B0DTYXGQTW",
       },
-
     ],
     "Algorithms & Data Structure": [
       {
@@ -56,8 +55,11 @@ const Books = () => {
         image: "/book-1.jpg",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
-      { title: "Data Structures and Algorithms in Python", image: "/dsa-in-python.jpg", link: "#" },
-
+      { 
+        title: "Data Structures and Algorithms in Python", 
+        image: "/dsa-in-python.jpg", 
+        link: "#" 
+      },
     ],
     "Cheat Sheets": [
       {
@@ -122,8 +124,6 @@ const Books = () => {
         image: "/rust-programs.jpg",
         link: "https://www.amazon.com/200-Rust-Programs-Beginners-performance-ebook/dp/B0DHT9R764/",
       }
-
-
     ],
     "Killer One-Liners": [
       {
@@ -168,7 +168,6 @@ const Books = () => {
         image: "/pattern-3.jpg",
         link: "https://www.amazon.com/150-Pattern-Programs-creativity-statements/dp/B0CTZW4Y9V",
       },
-
     ],
     "Design Patterns": [
       {
@@ -198,7 +197,6 @@ const Books = () => {
         image: "/50-concepts-c-sharp.jpg",
         link: "https://www.amazon.com/Concepts-Every-Developer-Should-Know-ebook/dp/B0CVFXGJZ9",
       },
-
     ],
   };
 
@@ -206,74 +204,136 @@ const Books = () => {
   const [selectedCategory, setSelectedCategory] = useState(categoryKeys[0]);
 
   return (
-    <section className="min-h-screen p-6 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#2c5364] text-gray-100">
-      {/* Header */}
-      <div className="text-center mb-10">
-        <h2 className="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 via-green-400 to-lime-500">
-          Explore My Books
-        </h2>
-        <p className="mt-4 text-slate-300 max-w-xl mx-auto">
-          Curated resources for programming, productivity, and interviews.
-        </p>
+    <section
+      id="books"
+      className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 -left-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Categories */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {categoryKeys.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-full text-sm sm:text-base transition transform hover:scale-105 ${
-              selectedCategory === cat
-                ? "bg-green-600 text-white shadow"
-                : "bg-zinc-800 text-gray-300 hover:bg-green-600 hover:text-white"
-            }`}
+      <div className="relative z-10 flex flex-col items-center max-w-7xl w-full">
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            My <span className="text-green-500">Books</span>
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Explore my collection of programming books covering various languages and concepts
+          </p>
+        </motion.div>
+
+        {/* Categories */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {categoryKeys.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                selectedCategory === cat
+                  ? "bg-green-500 text-white shadow-lg shadow-green-500/20"
+                  : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Books Grid */}
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
+          key={selectedCategory}
+        >
+          {categories[selectedCategory]?.map((book, i) => (
+            <motion.a
+              key={i}
+              href={book.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-green-500/30 transition-all duration-500 hover:scale-105"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              {/* Image */}
+              <div className="relative w-full h-72 overflow-hidden">
+                <Image
+                  src={book.image}
+                  alt={book.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* View Book Button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium">
+                    <FiExternalLink className="text-sm" />
+                    View Book
+                  </div>
+                </div>
+              </div>
+              
+              {/* Title */}
+              <div className="p-4">
+                <h3 className="text-white font-medium text-sm line-clamp-2 group-hover:text-green-400 transition-colors duration-300">
+                  {book.title}
+                </h3>
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* Bonus & More */}
+        <motion.div 
+          className="mt-16 flex flex-wrap justify-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.button
+            onClick={handleMultipleDownloads}
+            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg hover:shadow-green-500/20 transition-all duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Books Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {categories[selectedCategory]?.map((book, i) => (
-          <a
-            key={i}
-            href={book.link}
+            <FiDownload className="text-lg group-hover:scale-110 transition-transform duration-300" />
+            <span>Get Bonus Files</span>
+          </motion.button>
+          
+          <motion.a
+            href="https://www.amazon.com/s?k=hernando+abella"
             target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition"
+            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-transparent border-2 border-green-500/40 text-white font-semibold hover:bg-green-500/10 hover:border-green-500 transition-all duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <div className="relative w-full h-72">
-              <Image
-                src={book.image}
-                alt={book.title}
-                layout="fill"
-                objectFit="cover"
-                className="group-hover:opacity-90 transition"
-              />
-            </div>
-            <div className="p-4 bg-zinc-900">
-              <h3 className="font-semibold">{book.title}</h3>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      {/* Bonus & More */}
-      <div className="mt-16 flex flex-wrap justify-center gap-4">
-        <button
-          onClick={handleMultipleDownloads}
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-green-700 text-white font-semibold hover:bg-green-600 transition"
-        >
-          <FiBookOpen /> Get Bonus!
-        </button>
-        <a
-          href="https://www.amazon.com/s?k=hernando+abella&crid=1FUBDK4AOIJZC&sprefix=hernando+ab%2Caps%2C449&ref=nb_sb_noss_2" target="_blank"
-          className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-green-700 text-white font-semibold hover:bg-green-700/20 transition"
-        >
-          <FiArrowRight /> More Books
-        </a>
+            <FiArrowRight className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
+            <span>View All Books</span>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
