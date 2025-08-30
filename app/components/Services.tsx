@@ -165,7 +165,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="mt-12 text-center text-gray-400 text-sm"
         >
-          <p>Need something custom? <a href="#contact" className="text-green-500 hover:underline">Let's discuss your project</a></p>
+          <p>Need something custom? <a href="#contact" className="text-green-500 hover:underline">Let&apos;s discuss your project</a></p>
         </motion.div>
       </div>
     </section>
