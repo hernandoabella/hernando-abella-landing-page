@@ -1,32 +1,15 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiDownload, FiExternalLink, FiArrowRight } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
-type Book = { title: string; image: string; link: string; tag?: string };
+type Book = { title: string; image: string; link: string };
 type Categories = { [key: string]: Book[] };
 
-const bonusFiles = [
-  "/BONUS/50-Concepts-Every-Java-Developer-Should-Know.pdf",
-  "/BONUS/120-Advanced-Javascript-Interview-Questions.pdf",
-  "/BONUS/150-Python-Pattern-Programs.pdf",
-  "/BONUS/250-Killer-JS-One-Liners.pdf",
-  "/BONUS/SQL-Cookbook.pdf",
-];
-
 const Books = () => {
-  const handleMultipleDownloads = useCallback(() => {
-    bonusFiles.forEach((file) => {
-      const a = document.createElement("a");
-      a.href = file;
-      a.download = file.split("/").pop() || "file";
-      a.click();
-    });
-  }, []);
-
-  const categories: Categories = {
+    const categories: Categories = {
     "Best Seller": [
       {
         title: "300+ Python Algorithms",
@@ -199,135 +182,105 @@ const Books = () => {
       },
     ],
   };
-
   const categoryKeys = Object.keys(categories);
   const [selectedCategory, setSelectedCategory] = useState(categoryKeys[0]);
 
   return (
     <section
       id="books"
-      className="relative w-full min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]"
+      className="relative w-full min-h-screen flex items-start justify-center px-4 sm:px-8 py-16 bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]"
     >
-      {/* Glow background */}
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 -right-20 w-72 h-72 bg-green-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -left-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center max-w-7xl w-full">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+      <div className="relative z-10 flex flex-col lg:flex-row gap-12 max-w-7xl w-full">
+        {/* Sidebar Navigation */}
+        <motion.aside
+          className="w-full lg:w-1/5 flex flex-col gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="text-green-500">Book</span> Catalog
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my complete collection of programming books designed to make you a better developer.
-          </p>
-        </motion.div>
-
-        {/* Categories */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          {categoryKeys.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === cat
-                  ? "bg-green-500 text-white shadow-lg shadow-green-500/20"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+          <h3 className="text-white font-semibold text-lg mb-3">Categories</h3>
+          <div className="flex flex-col gap-2">
+            {categoryKeys.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  selectedCategory === cat
+                    ? "bg-green-500 text-white shadow-md shadow-green-500/30"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </motion.aside>
 
-        {/* Book Grid */}
-        <motion.div
-          key={selectedCategory}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          {categories[selectedCategory]?.map((book, i) => (
-            <motion.a
-              key={i}
-              href={book.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-green-400/30 hover:shadow-green-500/10 shadow-lg transition-all duration-500 hover:scale-105"
-              whileHover={{ y: -4 }}
-            >
-              {/* Image with overlay */}
-              <div className="relative w-full h-72 overflow-hidden">
-                <Image
-                  src={book.image}
-                  alt={book.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-all duration-500" />
+        {/* Main Book Grid */}
+        <div className="flex-1">
+          <motion.div 
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              Book <span className="text-green-500">Catalog</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Explore top programming books crafted to boost your coding journey 🚀
+            </p>
+          </motion.div>
 
-                {/* Floating title */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-base group-hover:text-green-400 transition-colors duration-300">
+          <motion.div 
+            key={selectedCategory}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            {categories[selectedCategory]?.map((book, i) => (
+              <motion.a
+                key={i}
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-green-500/30 transition-all duration-500 hover:scale-105"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="relative w-full h-72 overflow-hidden">
+                  <Image
+                    src={book.image}
+                    alt={book.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium">
+                      <FiExternalLink className="text-sm" />
+                      View Book
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-medium text-sm line-clamp-2 group-hover:text-green-400 transition-colors duration-300">
                     {book.title}
                   </h3>
-                  {book.tag && (
-                    <span className="text-xs text-gray-300 bg-white/10 px-2 py-0.5 rounded-md mt-1 inline-block">
-                      {book.tag}
-                    </span>
-                  )}
                 </div>
-              </div>
-
-              {/* Hover “View Book” action */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg text-sm font-medium">
-                  <FiExternalLink className="text-sm" />
-                  View Book
-                </div>
-              </div>
-            </motion.a>
-          ))}
-        </motion.div>
-
-        {/* Bonus & All Books Buttons */}
-        <motion.div
-          className="mt-16 flex flex-wrap justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <motion.button
-            onClick={handleMultipleDownloads}
-            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg hover:shadow-green-500/20 transition-all duration-300 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FiDownload className="text-lg group-hover:scale-110 transition-transform duration-300" />
-            <span>Get Bonus Files</span>
-          </motion.button>
-
-          <motion.a
-            href="https://www.amazon.com/s?k=hernando+abella"
-            target="_blank"
-            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-transparent border border-green-500/40 text-white font-semibold hover:bg-green-500/10 hover:border-green-500 transition-all duration-300 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FiArrowRight className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
-            <span>View All Books</span>
-          </motion.a>
-        </motion.div>
+              </motion.a>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
