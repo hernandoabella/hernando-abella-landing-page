@@ -16,35 +16,36 @@ interface Testimonial {
   feedback: string;
   image?: string;
   rating: number;
+  book: string;
 }
 
 const testimonialsData: Testimonial[] = [
   {
-    name: "Raj Kachu",
+    name: "Jeff Kikel",
     feedback:
-      "This book completely changed how I write JavaScript. The examples are practical, clear, and fun to follow!",
-    image: "/raj.jpg",
-    rating: 5,
-  },
-  {
-    name: "Nelson Daza",
-    feedback:
-      "As a Python beginner, this book made loops and patterns click instantly. Highly recommend for anyone starting out!",
+      "I picked up Python Cheat Sheet by Hernando Abella because I wanted a quick and easy way to brush up on Python without having to dig through heavy textbooks.",
+    image: "/jeff-kikel.jpg",
     rating: 4,
+    book: "Python Cheat Sheet",
   },
   {
-    name: "Gabriel Martínez",
+    name: "Randall McMurphy",
     feedback:
-      "Loved the SQL Cookbook! Straightforward explanations and real examples — it helped me level up fast.",
-    image: "/gabriel.jpg",
+      "This book is a treasure trove of Python algorithms, perfect for anyone looking to sharpen their programming skills or tackle complex coding challenges.",
+    image: "/randall-mcmurphy.jpg",
     rating: 5,
+    book: "300+ Python Algorithms",
   },
   {
-    name: "Andrea López",
+    name: "Bobby Plath",
     feedback:
-      "The Java concepts book is a gem. Every page had something that helped me in interviews and daily coding.",
+      "These are great one-liners for coding with Python. Yes they are basic, but are very useful functions for coding. Very helpful.",
+    image: "/bobby-plath.jpg",
     rating: 5,
+    book: "250+ Killer Python One-Liners",
   },
+  
+  
 ];
 
 const Testimonials = () => {
@@ -72,7 +73,6 @@ const Testimonials = () => {
                 className="basis-full md:basis-1/2 lg:basis-1/3 p-4"
               >
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg hover:shadow-green-500/10 p-6 flex flex-col items-center text-center transition-transform transform hover:-translate-y-1 duration-300 h-full">
-                  
                   {/* Profile Image or Fallback Avatar */}
                   {testimonial.image ? (
                     <Image
@@ -87,6 +87,11 @@ const Testimonials = () => {
                       {testimonial.name.charAt(0).toUpperCase()}
                     </div>
                   )}
+
+                  {/* Book Name */}
+                  <h4 className="text-green-300 font-semibold text-sm mb-2 bg-green-400/10 px-3 py-1 rounded-full">
+                    {testimonial.book}
+                  </h4>
 
                   {/* Rating Stars */}
                   <div className="flex justify-center gap-1 text-yellow-400 mb-3">
@@ -104,20 +109,19 @@ const Testimonials = () => {
                     “{testimonial.feedback}”
                   </p>
 
-                  {/* Name + Verified Badge */}
+                  {/* Name + Verified Purchase */}
                   <div className="flex flex-col items-center">
                     <h3 className="text-lg font-bold">{testimonial.name}</h3>
-                    <br/>
-                    <span className="text-sm text-green-400 mt-1 bg-green-400/10 px-3 py-1 rounded-full">
-                      Verified Purchase
-                    </span>
+                    
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          
+          {/* Arrows */}
+          <CarouselPrevious className="!bg-green-500 hover:!bg-green-600 !text-white transition-all shadow-lg hover:scale-105" />
+          <CarouselNext className="!bg-green-500 hover:!bg-green-600 !text-white transition-all shadow-lg hover:scale-105" />
         </Carousel>
       </div>
     </section>
