@@ -21,7 +21,6 @@ export default function Home() {
         <Services />
         <CTA />
         <Books />
-        <Testimonials />
         <Bonus
           title="Download the Bonus Books"
           text=""
