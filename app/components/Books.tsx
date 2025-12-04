@@ -204,7 +204,7 @@ const Books = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-white font-semibold text-lg mb-3">Categories</h3>
+          
           <div className="flex flex-col gap-2">
             {categoryKeys.map((cat) => (
               <button
