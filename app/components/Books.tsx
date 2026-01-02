@@ -39,16 +39,38 @@ const Books = () => {
         link: "https://www.amazon.com/Clean-Code-Python-Essentials-Mastering-ebook/dp/B0DTYXGQTW",
       },
     ],
+    "Artificial Intelligence": [
+      {
+        title: "Agentic Artificial Intelligence",
+        image: "/agentic-artificial-intelligence.png",
+        link: "https://www.amazon.com/Agentic-Artificial-Intelligence-Beginners-Practical/dp/B0F9WH6J5P",
+      },
+      {
+        title: "Building Smarter AI Systems with MPC Servers",
+        image: "/building-smarter-ai-systems.jpg",
+        link: "https://www.amazon.com/Building-Smarter-Systems-MCP-Servers-ebook/dp/B0FBRM8XJM",
+      },
+    ],
     "Algorithms & Data Structure": [
       {
-        title: "+300 Python Algorithms",
+        title: "300+ Python Algorithms",
         image: "/book-1.jpg",
+        link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
+      },
+      {
+        title: "300+ Java Algorithms Vol 1",
+        image: "/java-algorithms-1.png",
+        link: "https://www.amazon.com/300-Java-Algorithms-Mastering-Problem-Solving/dp/B0GCD1DFM1",
+      },
+      {
+        title: "300+ Java Algorithms Vol 2",
+        image: "/java-algorithms-2.png",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
       {
         title: "Data Structures and Algorithms in Python",
         image: "/dsa-in-python.jpg",
-        link: "#"
+        link: "https://www.amazon.com/Data-Structures-Algorithms-Python-Activate/dp/B0CW65JBLW"
       },
     ],
     "Cheat Sheets": [
@@ -86,6 +108,11 @@ const Books = () => {
         title: "Go Cheat Sheet",
         image: "/golang-cheatsheet.png",
         link: "https://www.amazon.com/Cheat-Sheet-Reference-Developers-Essentials-ebook/dp/B0DYF9BNQV",
+      },
+      {
+        title: "Git Cheat Sheet",
+        image: "/git-cheatsheet.png",
+        link: "https://www.amazon.com/GIT-Cheat-Sheet-Essential-Essentials/dp/B0G2L91YKX",
       },
     ],
     "Program Collection": [
