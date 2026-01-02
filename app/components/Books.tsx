@@ -73,6 +73,13 @@ const Books = () => {
         link: "https://www.amazon.com/Data-Structures-Algorithms-Python-Activate/dp/B0CW65JBLW"
       },
     ],
+    "Software Architecture": [
+      {
+        title: "System Design Interview",
+        image: "/system-design.jpg",
+        link: "https://www.amazon.com/System-Design-Interview-Software-Architect-ebook/dp/B0FRZY6PPW",
+      },
+    ],
     "Cheat Sheets": [
       {
         title: "The Ultimate AI Cheat Sheet",
@@ -218,6 +225,18 @@ const Books = () => {
         title: "50 C-Sharp Concepts Every Developer Should Know",
         image: "/50-concepts-c-sharp.jpg",
         link: "https://www.amazon.com/Concepts-Every-Developer-Should-Know-ebook/dp/B0CVFXGJZ9",
+      },
+    ],
+    "Interview Questions": [
+      {
+        title: "120+ JavaScript Interview Questions",
+        image: "/javascript-interview.jpg",
+        link: "",
+      },
+      {
+        title: "120+ Python Interview Questions",
+        image: "/python-interview.jpg",
+        link: "",
       },
     ],
   };
