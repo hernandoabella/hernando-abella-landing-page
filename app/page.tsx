@@ -8,6 +8,7 @@ import Bonus from "./components/Bonus";
 // import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonials";
+// import ServiceTestimonials from "./components/ServiceTestimonials";
 // import Footer from "./components/Footer";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <About />
         {/* <SideProjects /> */}
         <Services />
+        {/* <ServiceTestimonials /> */}
         {/* <CTA /> */}
         <Books />
         <Testimonials />
