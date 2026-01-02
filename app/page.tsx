@@ -4,9 +4,10 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Books from "./components/Books";
 import Bonus from "./components/Bonus";
-import CTA from "./components/CTA";
+// import CTA from "./components/CTA";
 // import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
+import Testimonials from "./components/Testimonials";
 // import Footer from "./components/Footer";
 
 export default function Home() {
@@ -18,8 +19,9 @@ export default function Home() {
         <About />
         {/* <SideProjects /> */}
         <Services />
-        <CTA />
+        {/* <CTA /> */}
         <Books />
+        <Testimonials />
         <Bonus
           title="Download the Bonus Books"
           text=""
