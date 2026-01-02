@@ -59,17 +59,17 @@ const Books = () => {
       },
       {
         title: "300+ Java Algorithms Vol 1",
-        image: "/java-algorithms-1.png",
+        image: "/java-algorithms-vol1.png",
         link: "https://www.amazon.com/300-Java-Algorithms-Mastering-Problem-Solving/dp/B0GCD1DFM1",
       },
       {
         title: "300+ Java Algorithms Vol 2",
-        image: "/java-algorithms-2.png",
+        image: "/java-algorithms-vol2.png",
         link: "https://www.amazon.com/300-Python-Algorithms-Mastering-Problem-Solving-ebook/dp/B0DJFS471K",
       },
       {
         title: "Data Structures and Algorithms in Python",
-        image: "/dsa-in-python.jpg",
+        image: "/dsa-in-python.png",
         link: "https://www.amazon.com/Data-Structures-Algorithms-Python-Activate/dp/B0CW65JBLW"
       },
     ],
@@ -191,6 +191,11 @@ const Books = () => {
         title: "Advanced JavaScript Design Patterns",
         image: "/js-design-pattern.jpg",
         link: "https://www.amazon.com/-/es/Hernando-Abella-ebook/dp/B0CW9LWMTB",
+      },
+      {
+        title: "Python Design Patterns",
+        image: "/python-design-pattern.png",
+        link: "https://www.amazon.com/Python-Design-Patterns-Building-applications/dp/B0FTGG2MCV",
       },
     ],
     "50 Concepts": [
