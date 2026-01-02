@@ -194,7 +194,7 @@ const Books = () => {
       },
       {
         title: "Python Design Patterns",
-        image: "/python-design-pattern.png",
+        image: "/python-design-patterns.png",
         link: "https://www.amazon.com/Python-Design-Patterns-Building-applications/dp/B0FTGG2MCV",
       },
     ],
