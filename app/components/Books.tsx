@@ -359,7 +359,7 @@ const Books = () => {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30">
+    <div className="bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30" id="books">
       <section className="max-w-7xl mx-auto px-6 pt-32">
         
         {/* HEADER DINÁMICO */}
