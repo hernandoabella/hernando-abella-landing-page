@@ -23,7 +23,7 @@
     "framer-motion": "^11.2.4",
     "gsap": "^3.14.2",
     "lucide-react": "^0.378.0",
-    "next": "^15.0.0-canary.187",
+    "next": "15.6.0-canary.60",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
