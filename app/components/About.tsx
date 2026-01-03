@@ -56,7 +56,7 @@ const AboutMe = () => {
             <p>
               Hey there! I&apos;m <span className="text-white font-medium">Hernando</span>, 
               a Full-Stack Developer with over a decade of experience crafting high-performance 
-              web solutions. I don't just write code; I architect experiences.
+              web solutions. I don&apos;t just write code; I architect experiences.
             </p>
             <p>
               My expertise lies in building <span className="text-green-400">scalable architectures </span> 
