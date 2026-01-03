@@ -111,7 +111,7 @@ const Testimonials = () => {
 
                       {/* Body: Feedback */}
                       <p className="text-gray-300 leading-relaxed italic text-base mb-8 flex-grow relative z-10">
-                        "{testimonial.feedback}"
+                        &quot;{testimonial.feedback}&quot;
                       </p>
 
                       {/* Rating */}
