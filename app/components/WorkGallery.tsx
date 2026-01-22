@@ -58,7 +58,7 @@ const cardVariants = {
 
 export default function WorkGallery() {
     return (
-        <section className="bg-[#050505] min-h-screen text-white py-32 selection:bg-green-500/30 overflow-hidden">
+        <section id="my-work" className="bg-[#050505] min-h-screen text-white py-32 selection:bg-green-500/30 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative">
                 {/* Background Decorative Glow */}
                 <div className="absolute -top-24 -left-24 w-96 h-96 bg-green-500/10 blur-[120px] rounded-full pointer-events-none" />
