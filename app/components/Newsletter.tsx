@@ -58,7 +58,6 @@ export default function NewsletterForm() {
           padding: 1.5rem !important;
           border-radius: 99px !important;
           border: 2px solid rgba(255,255,255,0.1) !important;
-          text-align: center !important;
           background-color: rgba(255,255,255,0.05) !important;
           color: #ffffff !important;
           transition: all 0.3s ease !important;
