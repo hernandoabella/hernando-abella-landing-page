@@ -1,3 +1,5 @@
+"use client"
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,6 +10,7 @@ import Bonus from "./components/Bonus";
 // import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonials";
+import WorkGallery from "./components/WorkGallery";
 // import ServiceTestimonials from "./components/ServiceTestimonials";
 // import Footer from "./components/Footer";
 
@@ -20,6 +23,7 @@ export default function Home() {
         <About />
         {/* <SideProjects /> */}
         <Services />
+        <WorkGallery />
         {/* <ServiceTestimonials /> */}
         {/* <CTA /> */}
         <Books />

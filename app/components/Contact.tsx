@@ -17,7 +17,7 @@ const ContactAndFooter = () => {
   ];
 
   return (
-    <section id="contact" className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 pt-16 pb-8 overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]">
+    <section id="contact" className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 pt-16 pb-8 bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-green-500/5 rounded-full blur-3xl"></div>
