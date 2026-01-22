@@ -367,7 +367,7 @@ const Books = () => {
           <div className="space-y-4">
           
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic">
-              BOOK <span className="text-zinc-800 not-italic">CATALOG</span>
+               <span className="text-zinc-800 not-italic">BOOK CATALOG</span>
             </h2>
           </div>
 
