@@ -24,23 +24,44 @@ const testimonialsData: Testimonial[] = [
   {
     name: "Jeff Kikel",
     feedback: "I picked up Python Cheat Sheet by Hernando Abella because I wanted a quick and easy way to brush up on Python without having to dig through heavy textbooks.",
-    image: "/jeff-kikel.jpg",
+    image: "/clients/jeff-kikel.jpg",
     rating: 4,
     book: "Python Cheat Sheet",
   },
   {
     name: "Randall McMurphy",
     feedback: "This book is a treasure trove of Python algorithms, perfect for anyone looking to sharpen their programming skills or tackle complex coding challenges.",
-    image: "/randall-mcmurphy.jpg",
+    image: "/clients/randall-mcmurphy.jpg",
     rating: 5,
     book: "300+ Python Algorithms",
   },
   {
     name: "Bobby Plath",
     feedback: "These are great one-liners for coding with Python. Yes they are basic, but are very useful functions for coding. Very helpful.",
-    image: "/bobby-plath.jpg",
+    image: "/clients/bobby-plath.jpg",
     rating: 5,
     book: "250+ Killer Python One-Liners",
+  },
+  {
+    name: "Nick SC",
+    feedback: "Agentic Artificial Intelligence is a fantastically detailed book that introduces agentic AI, exploring its capabilities and how to incorporate it into software projects you can use in a commercial setting.",
+    image: "/clients/nick-sc.jpg",
+    rating: 5,
+    book: "Agentic Artificial Intelligence",
+  },
+  {
+    name: "Lucas",
+    feedback: "I never thought learning to code could be this fun. This book explains everything as if you were following a recipe. Perfect for curious beginners or for reviewing without stress. Highly recommended!",
+    image: "/clients/lucas.jpg",
+    rating: 5,
+    book: "Python Cook Book",
+  },
+  {
+    name: "Magnusaxx",
+    feedback: "This comprehensive book is an excellent resource for Python enthusiasts at any level, providing advanced interview questions that help deepen understanding of key concepts.",
+    image: "/clients/magnusaxx.jpg",
+    rating: 5,
+    book: "120 Advanced Python Interview Questions",
   },
 ];
 
@@ -52,7 +73,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, name
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 px-4 sm:px-6 bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30 text-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 px-4 sm:px-6 bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30 relative overflow-hidden">
       
       {/* Dynamic Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
@@ -97,10 +118,11 @@ const Testimonials = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="h-full p-2"
                   >
-                    <div className="relative h-full bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 flex flex-col hover:bg-white/[0.06] hover:border-green-500/30 transition-all duration-500 shadow-2xl">
+                    {/* select-none: Evita resaltado azul al arrastrar el carrusel */}
+                    <div className="relative h-full bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 flex flex-col hover:bg-white/[0.06] hover:border-green-500/30 transition-all duration-500 shadow-2xl select-none cursor-default">
                       
-                      {/* Floating Quote Icon */}
-                      <FaQuoteRight className="absolute top-8 right-8 text-white/5 text-4xl" />
+                      {/* Floating Quote Icon - pointer-events-none para no interferir con clicks */}
+                      <FaQuoteRight className="absolute top-8 right-8 text-white/5 text-4xl pointer-events-none" />
 
                       {/* Header: Book Title */}
                       <div className="mb-6 relative z-10">
@@ -128,12 +150,12 @@ const Testimonials = () => {
                             <Image
                               src={testimonial.image}
                               fill
-                              className="rounded-full object-cover border-2 border-green-500/20"
+                              className="rounded-full object-cover border-2 border-green-500/20 pointer-events-none"
                               alt={testimonial.name}
                               onError={(e) => handleImageError(e, testimonial.name)}
                             />
                           ) : (
-                            <div className="w-full h-full rounded-full bg-gradient-to-tr from-green-500 to-emerald-700 flex items-center justify-center text-white font-bold">
+                            <div className="w-full h-full rounded-full bg-gradient-to-tr from-green-500 to-emerald-700 flex items-center justify-center text-white font-bold pointer-events-none">
                               {testimonial.name.charAt(0)}
                             </div>
                           )}
@@ -152,7 +174,7 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
 
-            {/* Navigation Arrows - Styled to match the dark theme */}
+            {/* Navigation Arrows */}
             <div className="flex justify-center gap-4 mt-12">
                <CarouselPrevious className="static translate-y-0 h-12 w-12 bg-white/5 border-white/10 hover:bg-green-500 hover:text-black hover:border-green-500 transition-all" />
                <CarouselNext className="static translate-y-0 h-12 w-12 bg-white/5 border-white/10 hover:bg-green-500 hover:text-black hover:border-green-500 transition-all" />
