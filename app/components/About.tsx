@@ -4,8 +4,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaCode, FaServer, FaToolbox, FaCheckCircle } from "react-icons/fa";
 
-const AboutMe = () => {
-  // Categorized skills for better visual organization
+// Definimos la interfaz para corregir el error de TypeScript
+interface AboutProps {
+  isOpen?: boolean;
+}
+
+const AboutMe = ({ isOpen }: AboutProps) => {
   const skillCategories = [
     {
       title: "Frontend",
@@ -27,7 +31,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 overflow-hidden bg-[#0a0a0a]"
+      className="relative w-full flex items-center justify-center px-4 sm:px-6 py-16 md:py-24 overflow-hidden bg-[#0a0a0a]"
     >
       {/* Background Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -35,14 +39,13 @@ const AboutMe = () => {
         <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-20 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto gap-12 lg:gap-20">
+      <div className="relative z-20 flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto gap-12 lg:gap-20">
         
         {/* Left Side: Text Content */}
         <motion.div
           initial={{ x: -30, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full lg:w-1/2 space-y-8"
         >
           <div className="space-y-4">
@@ -56,11 +59,7 @@ const AboutMe = () => {
             <p>
               Hey there! I&apos;m <span className="text-white font-medium">Hernando</span>, 
               a Full-Stack Developer with over a decade of experience crafting high-performance 
-              web solutions. I don&apos;t just write code; I architect experiences.
-            </p>
-            <p>
-              My expertise lies in building <span className="text-green-400">scalable architectures </span> 
-              and seamless user interfaces. 
+              web solutions.
             </p>
           </div>
 
@@ -73,11 +72,13 @@ const AboutMe = () => {
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + (i * 0.1) }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
               >
                 <div className="text-3xl font-bold text-green-500 mb-1">{stat.value}</div>
                 <div className="text-white font-medium text-sm">{stat.label}</div>
-                <div className="text-gray-500 text-xs mt-1">{stat.sub}</div>
               </motion.div>
             ))}
           </div>
@@ -86,9 +87,8 @@ const AboutMe = () => {
         {/* Right Side: Skill Categories */}
         <motion.div
           initial={{ x: 30, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="w-full lg:w-1/2"
         >
           <div className="grid gap-6">
@@ -99,23 +99,16 @@ const AboutMe = () => {
               >
                 <div className="flex items-center gap-3 mb-6">
                   {cat.icon}
-                  <h3 className="text-lg font-semibold text-white tracking-wide uppercase text-sm">{cat.title}</h3>
+                  <h3 className="text-lg font-semibold text-white uppercase text-xs tracking-widest">{cat.title}</h3>
                 </div>
                 
                 <div className="flex flex-wrap gap-4">
                   {cat.skills.map((skill, i) => (
-                    <div
-                      key={i}
-                      className="group/icon relative flex flex-col items-center"
-                    >
+                    <div key={i} className="group/icon relative flex flex-col items-center">
                       <motion.i
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         className={`devicon-${skill} text-3xl sm:text-4xl text-gray-500 group-hover/icon:text-white transition-all duration-300 cursor-help`}
                       />
-                      {/* Tooltip */}
-                      <span className="absolute -top-10 scale-0 group-hover/icon:scale-100 transition-all duration-200 px-2 py-1 bg-green-500 text-black text-[10px] font-bold rounded">
-                        {skill.split('-')[0].toUpperCase()}
-                      </span>
                     </div>
                   ))}
                 </div>
@@ -134,16 +127,14 @@ const AboutMe = () => {
               <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
-                  whileInView={{ width: "92%" }}
-                  transition={{ duration: 1.5, ease: "circOut" }}
-                  viewport={{ once: true }}
+                  animate={{ width: "92%" }}
+                  transition={{ duration: 1.5, ease: "circOut", delay: 0.5 }}
                   className="h-full bg-gradient-to-r from-green-500 to-emerald-400"
                 />
               </div>
             </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

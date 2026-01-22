@@ -52,7 +52,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, name
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 px-4 sm:px-6 bg-[#080808] text-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 px-4 sm:px-6 bg-[#050505] min-h-screen text-white pb-32 selection:bg-green-500/30 text-white relative overflow-hidden">
       
       {/* Dynamic Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
