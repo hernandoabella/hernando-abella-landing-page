@@ -11,6 +11,7 @@ import Bonus from "./components/Bonus";
 import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonials";
 import WorkGallery from "./components/WorkGallery";
+import Newsletter from "./components/Newsletter";
 // import ServiceTestimonials from "./components/ServiceTestimonials";
 // import Footer from "./components/Footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
         {/* <CTA /> */}
         <Books />
         <Testimonials />
+        <Newsletter />
         <Bonus
           title="Download the Bonus Books"
           text=""
