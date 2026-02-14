@@ -67,7 +67,7 @@ const ContactAndFooter = () => {
             href="mailto:hernandoabella@gmail.com"
             className="text-xl text-green-400 font-medium hover:text-green-300 transition-colors duration-300"
           >
-            hernandoabella@gmail.com
+            contact@hernandoabella.com
           </a>
         </motion.div>
 
