@@ -6,45 +6,27 @@ import { FaRulerCombined, FaFileAlt, FaGlobe, FaCheckCircle, FaArrowRight } from
 
 const services = [
   {
-    title: "HTML Perfect Pixel Conversion",
-    description:
-      "Convert your design (Figma, PSD, etc.) into clean, responsive HTML with pixel-perfect precision.",
-    icon: <FaRulerCombined className="text-3xl" />,
-    includes: [
-      "Responsive design",
-      "Cross-browser compatibility",
-      "Clean semantic HTML/CSS",
-      "W3C validated code",
-    ],
-    price: "Starting at $199",
+    title: "Pixel-Perfect Conversion",
+    description: "I transform your Figma, Adobe XD, or PSD designs into high-performance, responsive HTML/Tailwind code.",
+    icon: <FaRulerCombined />,
+    includes: ["Mobile-First Approach", "W3C Validated Markup", "SEO-Friendly Semantics", "Swift Loading Speeds"],
+    price: "$199",
     popular: false,
   },
   {
-    title: "Landing Page Creation",
-    description:
-      "Custom high-converting landing pages designed for speed, responsiveness, and clarity.",
-    icon: <FaFileAlt className="text-3xl" />,
-    includes: [
-      "Mobile-first layout",
-      "Modern UI/UX design",
-      "Fast loading time",
-      "SEO optimized",
-    ],
-    price: "Starting at $349",
+    title: "Premium Landing Pages",
+    description: "High-converting landing pages built to turn visitors into customers with modern aesthetics and speed.",
+    icon: <FaFileAlt />,
+    includes: ["Conversion-Optimized UI", "Form Integration", "Analytics Setup", "Scroll Animations"],
+    price: "$349",
     popular: true,
   },
   {
-    title: "Website Development",
-    description:
-      "Full website builds using modern tech stacks, optimized for performance and SEO.",
-    icon: <FaGlobe className="text-3xl" />,
-    includes: [
-      "Frontend + Backend setup",
-      "Deployment support",
-      "CMS integration (if needed)",
-      "Performance tuning",
-    ],
-    price: "Starting at $899",
+    title: "Full-Stack Development",
+    description: "End-to-end web applications built with Next.js, featuring robust backends and seamless user journeys.",
+    icon: <FaGlobe />,
+    includes: ["Database Architecture", "Auth & Security", "CMS Connectivity", "Deployment Pipeline"],
+    price: "$899",
     popular: false,
   },
 ];
@@ -53,119 +35,115 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a]"
+      className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 overflow-hidden bg-[#050505]"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 -left-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+      {/* Background Orbs & Grid */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="absolute top-1/4 -left-10 w-72 h-72 bg-green-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-7xl w-full">
-        {/* Section Title */}
+      <div className="relative z-10 max-w-7xl w-full">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-green-500">Services</span>
+          <span className="text-green-500 font-mono text-sm tracking-widest uppercase mb-4 block">Capabilities</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">Solutions</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Professional web development services to bring your digital vision to life
+          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+            Delivering high-performance digital products tailored to your specific business needs.
           </p>
         </motion.div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        {/* Pricing/Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ y: -10 }}
-              className={`relative flex flex-col h-full group ${service.popular ? 'lg:scale-110 lg:z-10' : ''}`}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              className={`relative group h-full`}
             >
-              {/* Popular badge */}
               {service.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-4 py-1 rounded-full z-10">
-                  MOST POPULAR
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-[10px] tracking-widest font-black px-4 py-1.5 rounded-full z-20 shadow-xl shadow-green-500/20">
+                  RECOMMENDED
                 </div>
               )}
-              
-              <div className={`flex flex-col h-full p-6 rounded-2xl backdrop-blur-md border transition-all duration-500
+
+              <div className={`flex flex-col h-full p-8 rounded-3xl border transition-all duration-500 backdrop-blur-sm
                 ${service.popular 
-                  ? 'bg-gradient-to-b from-green-500/10 to-green-600/5 border-green-500/30 shadow-lg shadow-green-500/10' 
-                  : 'bg-white/5 border-white/10 hover:border-green-500/30'
+                  ? 'bg-white/[0.03] border-green-500/40 shadow-[0_0_40px_-15px_rgba(34,197,94,0.2)]' 
+                  : 'bg-white/[0.02] border-white/10 hover:border-green-500/20'
                 }`}
               >
-                {/* Icon */}
-                <motion.div 
-                  className="flex items-center justify-center w-16 h-16 rounded-xl mb-6 transition-all duration-500 group-hover:scale-110"
-                  style={{
-                    background: service.popular 
-                      ? 'linear-gradient(135deg, rgba(72, 187, 120, 0.2) 0%, rgba(56, 161, 105, 0.2) 100%)' 
-                      : 'rgba(255, 255, 255, 0.05)'
-                  }}
-                >
-                  <div className={service.popular ? "text-green-400" : "text-green-500"}>
-                    {service.icon}
-                  </div>
-                </motion.div>
+                {/* Icon Wrapper */}
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-8 
+                  ${service.popular ? 'bg-green-500 text-black' : 'bg-white/5 text-green-500'}`}>
+                  {service.icon}
+                </div>
 
-                {/* Title */}
-                <h3 className={`text-xl font-semibold mb-3 ${service.popular ? "text-white" : "text-white"}`}>
+                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-300 text-sm mb-6 flex-grow">
+                <p className="text-gray-400 text-sm leading-relaxed mb-8">
                   {service.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-6">
+                {/* Features List */}
+                <div className="space-y-4 mb-10 flex-grow">
                   {service.includes.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <FaCheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
+                    <div key={i} className="flex items-center gap-3">
+                      <FaCheckCircle className="text-green-500/70 text-sm flex-shrink-0" />
                       <span className="text-gray-300 text-sm">{item}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                {/* Price & CTA */}
-                <div className="mt-auto">
-                  <div className={`text-lg font-bold mb-4 ${service.popular ? "text-green-400" : "text-green-500"}`}>
-                    {service.price}
+                {/* Price Display */}
+                <div className="pt-6 border-t border-white/5">
+                  <div className="flex items-baseline gap-1 mb-6">
+                    <span className="text-gray-500 text-sm font-medium">Starts at</span>
+                    <span className="text-3xl font-bold text-white">{service.price}</span>
                   </div>
-                  <button className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all duration-300 group-hover:gap-3
+
+                  <motion.button 
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full group/btn flex items-center justify-center gap-2 py-4 px-6 rounded-2xl font-bold text-sm transition-all duration-300
                     ${service.popular 
-                      ? 'bg-green-500 text-white hover:bg-green-600' 
-                      : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white'
+                      ? 'bg-green-500 text-black hover:bg-green-400 shadow-lg shadow-green-500/20' 
+                      : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
                     }`}
                   >
-                    Get Started
-                    <FaArrowRight className="text-sm transition-all duration-300" />
-                  </button>
+                    Select Plan
+                    <FaArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Note */}
+        {/* Custom Project Link */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center text-gray-400 text-sm"
+          className="mt-16 text-center"
         >
-          <p>Need something custom? <a href="#contact" className="text-green-500 hover:underline">Let&apos;s discuss your project</a></p>
+          <div className="inline-flex items-center gap-2 p-1 pr-4 rounded-full bg-white/5 border border-white/10 text-gray-400 text-sm">
+            <span className="bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-[10px] font-bold tracking-tighter uppercase">Custom</span>
+            Need a specific solution? <a href="#contact" className="text-white hover:text-green-400 font-medium underline underline-offset-4 decoration-green-500/30 transition-colors">Contact me directly</a>
+          </div>
         </motion.div>
       </div>
     </section>

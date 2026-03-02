@@ -1,12 +1,18 @@
+"use client"
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Books from "./components/Books";
 import Bonus from "./components/Bonus";
-import CTA from "./components/CTA";
+// import CTA from "./components/CTA";
 // import SideProjects from "./components/SideProjects";
 import Contact from "./components/Contact";
+import Testimonials from "./components/Testimonials";
+import WorkGallery from "./components/WorkGallery";
+import Newsletter from "./components/Newsletter";
+// import ServiceTestimonials from "./components/ServiceTestimonials";
 // import Footer from "./components/Footer";
 
 export default function Home() {
@@ -18,8 +24,12 @@ export default function Home() {
         <About />
         {/* <SideProjects /> */}
         <Services />
-        <CTA />
+        <WorkGallery />
+        {/* <ServiceTestimonials /> */}
+        {/* <CTA /> */}
         <Books />
+        <Testimonials />
+        <Newsletter />
         <Bonus
           title="Download the Bonus Books"
           text=""
